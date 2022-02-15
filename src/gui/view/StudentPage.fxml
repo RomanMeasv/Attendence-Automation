@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StudentPageController">
    <children>
@@ -14,28 +17,105 @@
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0">
                <children>
-                  <Label text="Current class" />
-                  <Label text="ITO" />
-                  <Label text="Trine" />
-                  <Label text="8:15 - 9:00" />
-                  <HBox prefHeight="100.0" prefWidth="200.0" />
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="300.0">
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" text="Current class">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding></Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="ITO">
+                     <font>
+                        <Font size="26.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Trine">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="8:15 - 9:00">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <HBox maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="125.0" prefWidth="300.0">
                      <children>
-                        <Button mnemonicParsing="false" text="+" />
-                        <Button mnemonicParsing="false" text="-" />
-                        <Button mnemonicParsing="false" text="settings" />
+                        <Label text="Attended periods">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="30.0" top="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children></HBox>
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Button>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="4.0" />
+                           </HBox.margin></Button>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../resources/images/settings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="4.0" />
+                           </HBox.margin></Button>
                      </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </HBox>
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="300.0">
                <children>
-                  <Label text="John Bach" />
-                  <Label text="Overview" />
-                  <Label text="Total absence: 5%" />
+                  <Label maxWidth="1.7976931348623157E308" text="John Bach">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font></Label>
+                  <Label maxWidth="1.7976931348623157E308" text="Overview">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Total absence: 5%" underline="true">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
                   <HBox prefHeight="200.0" prefWidth="300.0">
                      <children>
-                        <PieChart />
+                        <PieChart title="CHART" />
                      </children>
                   </HBox>
                </children>
