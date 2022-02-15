@@ -5,14 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/loginpage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@css/loginpage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="337.0" layoutY="14.0" text="Attendance automation" />
-      <Label layoutX="325.0" layoutY="207.0" text="Username" />
-      <Label layoutX="325.0" layoutY="251.0" prefHeight="26.0" prefWidth="84.0" text="Password" />
-      <TextField layoutX="325.0" layoutY="225.0" />
-      <TextField layoutX="325.0" layoutY="274.0" />
-      <Button layoutX="325.0" layoutY="337.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="150.0" text="Login" />
+      <Label id="title" alignment="CENTER" layoutX="286.0" layoutY="14.0" prefHeight="60.0" prefWidth="300.0" styleClass="header" text="Attendance Automation" textAlignment="CENTER" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="10.0" />
+      <Label layoutX="150.0" layoutY="136.0" text="Username" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="136.0" />
+      <Label layoutX="150.0" layoutY="206.0" text="Password" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="206.0" />
+      <TextField layoutX="150.0" layoutY="166.0" prefHeight="26.0" prefWidth="300.0" styleClass="interactive" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="166.0" />
+      <TextField layoutX="150.0" layoutY="236.0" prefHeight="26.0" prefWidth="300.0" styleClass="interactive" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="236.0" />
+      <Button id="loginbutton" layoutX="274.0" layoutY="361.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" styleClass="interactive" text="Login" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
    </children>
 </AnchorPane>
