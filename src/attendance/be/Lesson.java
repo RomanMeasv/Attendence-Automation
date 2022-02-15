@@ -2,11 +2,11 @@ package attendance.be;
 
 import java.util.List;
 
-public class Clas {
+public class Lesson {
     private String cName;
     private List<Student> cStudents;
 
-    public Clas(String cName, List<Student> cStudents){
+    public Lesson(String cName, List<Student> cStudents){
         this.cName = cName;
         this.cStudents = cStudents;
     }

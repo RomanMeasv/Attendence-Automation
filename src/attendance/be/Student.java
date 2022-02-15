@@ -5,9 +5,9 @@ import java.util.List;
 public class Student {
     private  String sfName;
     private String slName;
-    private Clas sClas;
+    private Lesson sClas;
 
-    public Student(String sfName, String slName, Clas sClas) {
+    public Student(String sfName, String slName, Lesson sClas) {
         this.sfName = sfName;
         this.slName = slName;
         this.sClas = sClas;
@@ -29,11 +29,11 @@ public class Student {
         this.slName = slName;
     }
 
-    public Clas getsClas() {
+    public Lesson getsClas() {
         return sClas;
     }
 
-    public void setsClas(Clas sClas) {
+    public void setsClas(Lesson sClas) {
         this.sClas = sClas;
     }
 

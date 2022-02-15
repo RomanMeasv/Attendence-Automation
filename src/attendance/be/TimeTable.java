@@ -1,16 +1,16 @@
 package attendance.be;
 
 public class TimeTable {
-    private Clas [][] slots = new Clas[5][6];
+    private Lesson[][] slots = new Lesson[5][6];
 
-    public TimeTable(Clas[][] slots) {
+    public TimeTable(Lesson[][] slots) {
         this.slots = slots;
     }
-    public Clas[][] getSlots() {
+    public Lesson[][] getSlots() {
         return slots;
     }
 
-    public void setSlots(Clas[][] slots) {
+    public void setSlots(Lesson[][] slots) {
         this.slots = slots;
     }
 
