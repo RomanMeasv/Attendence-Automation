@@ -1,4 +1,4 @@
-package be;
+package attendance.be;
 
 import java.util.List;
 

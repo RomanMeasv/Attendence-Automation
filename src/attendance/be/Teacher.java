@@ -1,4 +1,4 @@
-package be;
+package attendance.be;
 
 public class Teacher {
     private String tfName;

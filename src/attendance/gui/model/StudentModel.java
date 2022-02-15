@@ -1,4 +1,4 @@
-package gui.model;
+package attendance.gui.model;
 
 public class StudentModel {
 }

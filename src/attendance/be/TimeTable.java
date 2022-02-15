@@ -1,4 +1,4 @@
-package be;
+package attendance.be;
 
 public class TimeTable {
     private Clas [][] slots = new Clas[5][6];

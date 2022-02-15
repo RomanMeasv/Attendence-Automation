@@ -1,4 +1,4 @@
-package bll;
+package attendance.bll;
 
 public class ClasLogic {
 }

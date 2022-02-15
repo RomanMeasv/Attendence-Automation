@@ -1,4 +1,4 @@
-package gui.controller;
+package attendance.gui.controller;
 
 public class StudentPageController {
 }
