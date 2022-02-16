@@ -2,6 +2,7 @@ package attendance;
 
 import attendance.gui.controller.LoginPageController;
 import attendance.gui.controller.RootLayoutController;
+import attendance.gui.controller.StudentPageController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -54,6 +55,19 @@ public class MainApp extends Application {
 
         // Give the controller access to the main app.
         LoginPageController controller = loader.getController();
+        controller.setMainApp(this);
+    }
+
+    private void showStudentPage() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("gui/view/StudentPage.fxml"));
+        AnchorPane loginPage = loader.load();
+
+        // Set person overview into the center of root layout.
+        rootLayout.setCenter(loginPage);
+
+        // Give the controller access to the main app.
+        StudentPageController controller = loader.getController();
         controller.setMainApp(this);
     }
 }
