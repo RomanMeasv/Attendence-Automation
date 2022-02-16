@@ -1,27 +1,12 @@
 package attendance.be;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Teacher extends User {
-    private String tfName;
-    private String tlName;
+    private String name;
 
-    public Teacher(String tfName, String tlName) {
-        this.tfName = tfName;
-        this.tlName = tlName;
-    }
-
-    public String getTfName() {
-        return tfName;
-    }
-
-    public void setTfName(String tfName) {
-        this.tfName = tfName;
-    }
-
-    public String getTlName() {
-        return tlName;
-    }
-
-    public void setTlName(String tlName) {
-        this.tlName = tlName;
+    public Teacher(String name) {
+        this.name = name;
     }
 }
