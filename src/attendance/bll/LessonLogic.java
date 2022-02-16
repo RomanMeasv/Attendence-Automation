@@ -1,4 +1,4 @@
 package attendance.bll;
 
-public class ClasLogic {
+public class LessonLogic {
 }
