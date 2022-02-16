@@ -11,34 +11,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentPageController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@css/StudentPage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentPageController">
    <children>
-      <HBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0">
+            <VBox alignment="TOP_CENTER" maxWidth="400.0" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" text="Current class">
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" styleClass="text-h1" text="Current class">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <padding>
                         <Insets top="10.0" />
                      </padding></Label>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="ITO">
+                  <Label fx:id="classLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="text-h2" text="ITO">
                      <font>
                         <Font size="26.0" />
                      </font></Label>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Trine">
+                  <Label fx:id="teacherLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="text-h3" text="Trine">
                      <font>
                         <Font size="16.0" />
                      </font></Label>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="8:15 - 9:00">
+                  <Label fx:id="timeLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="text-h4" text="8:15 - 9:00">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <HBox maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="125.0" prefWidth="300.0">
+                  <HBox maxHeight="150.0" maxWidth="1.7976931348623157E308" minHeight="150.0" minWidth="-Infinity" prefHeight="150.0">
                      <children>
-                        <Label text="Attended periods">
+                        <Label maxWidth="1.7976931348623157E308" minHeight="-Infinity" text="Attended periods">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -49,21 +49,21 @@
                      </children></HBox>
                   <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308">
                      <children>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="buttton-" text="+">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="30.0" />
                            </HBox.margin></Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-" text="-">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="4.0" />
                            </HBox.margin></Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-">
                            <graphic>
                               <ImageView pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -81,9 +81,9 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="300.0">
+            <VBox maxWidth="400.0" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label maxWidth="1.7976931348623157E308" text="John Bach">
+                  <Label fx:id="nameLabel" maxWidth="1.7976931348623157E308" text="John Bach">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -103,19 +103,29 @@
                      <font>
                         <Font size="16.0" />
                      </font></Label>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Total absence: 5%" underline="true">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font></Label>
-                  <HBox prefHeight="200.0" prefWidth="300.0">
+                  <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <PieChart title="CHART" />
+                        <Label alignment="CENTER" text="Total absence:" underline="true">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="absenceLabel" text="5%">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="4.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="250.0">
+                     <children>
+                        <PieChart fx:id="pieChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="250.0" prefWidth="400.0" title="CHART" />
                      </children>
                   </HBox>
                </children>
