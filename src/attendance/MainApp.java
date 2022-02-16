@@ -28,7 +28,7 @@ public class MainApp extends Application {
 
         initRootLayout();
 
-        showLoginPage();
+        showStudentPage();
     }
 
     private void initRootLayout() throws IOException {
