@@ -1,31 +1,20 @@
 package attendance.be;
 
-import java.util.List;
+import java.sql.Time;
+import java.time.LocalDateTime;
 
 public class Lesson {
-    private String cName;
-    private List<Student> cStudents;
+    private String name;
+    private Teacher teacher;
+    private String room;
+    LocalDateTime start;
+    LocalDateTime end;
 
-    public Lesson(String cName, List<Student> cStudents){
-        this.cName = cName;
-        this.cStudents = cStudents;
+    public Lesson(String name, Teacher teacher, String room, LocalDateTime start, LocalDateTime end) {
+        this.name = name;
+        this.teacher = teacher;
+        this.room = room;
+        this.start = start;
+        this.end = end;
     }
-
-    public String getcName() {
-        return cName;
-    }
-
-    public void setcName(String cName) {
-        this.cName = cName;
-    }
-
-    public List<Student> getcStudents() {
-        return cStudents;
-    }
-
-    public void setcStudents(List<Student> cStudents) {
-        this.cStudents = cStudents;
-    }
-
-
 }

@@ -1,10 +1,11 @@
 package attendance.gui.controller;
-
 import attendance.MainApp;
 
-public class StudentPageController {
+public class TeacherPageController {
+
     MainApp mainApp;
+
     public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
+        this.mainApp = mainApp;}
     }
-}
+
