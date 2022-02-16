@@ -1,4 +1,4 @@
-package dal;
+package attendance.dal;
 
 import attendance.be.Student;
 import attendance.be.Teacher;
