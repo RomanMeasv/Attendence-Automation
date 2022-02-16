@@ -5,6 +5,7 @@ import attendance.be.Student;
 import attendance.be.Teacher;
 import attendance.gui.model.UserModel;
 import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -14,7 +15,9 @@ public class LoginPageController {
     UserModel userModel;
 
     @FXML
-    TextField txfUsername, txfPassword;
+    TextField txfUsername;
+    @FXML
+    PasswordField pwfPassword;
 
     public LoginPageController()
     {
@@ -26,7 +29,7 @@ public class LoginPageController {
     }
 
     public void handleLogin() throws IOException {
-        if (userModel.tryLogIn(txfUsername.getText(), txfPassword.getText()) == null)
+        if (userModel.tryLogIn(txfUsername.getText(), pwfPassword.getText()) == null)
         {
             return;
         }
