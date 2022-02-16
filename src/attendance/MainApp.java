@@ -3,6 +3,7 @@ package attendance;
 import attendance.gui.controller.LoginPageController;
 import attendance.gui.controller.RootLayoutController;
 import attendance.gui.controller.StudentPageController;
+import attendance.gui.controller.TeacherPageController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,7 +31,7 @@ public class MainApp extends Application {
         showStudentPage();
     }
 
-    public void initRootLayout() throws IOException {
+    private void initRootLayout() throws IOException {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("gui/view/RootLayout.fxml"));
@@ -58,16 +59,28 @@ public class MainApp extends Application {
         controller.setMainApp(this);
     }
 
-    private void showStudentPage() throws IOException {
+    public void showStudentPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("gui/view/StudentPage.fxml"));
-        AnchorPane loginPage = loader.load();
+        AnchorPane studentPage = loader.load();
 
         // Set person overview into the center of root layout.
-        rootLayout.setCenter(loginPage);
+        rootLayout.setCenter(studentPage);
 
         // Give the controller access to the main app.
         StudentPageController controller = loader.getController();
+        controller.setMainApp(this);
+    }
+
+    public void showTeacherPage() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("gui/view/TeacherPage.fxml"));
+        AnchorPane teacherPage = loader.load();
+
+        rootLayout.setCenter(teacherPage);
+
+        // Give the controller access to the main app.
+        TeacherPageController controller = loader.getController();
         controller.setMainApp(this);
     }
 }
