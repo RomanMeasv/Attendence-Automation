@@ -1,7 +1,10 @@
 package attendance.dal;
 
+import attendance.be.Lesson;
 import attendance.be.Student;
 import attendance.be.Teacher;
+import attendance.be.User;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,64 +12,25 @@ import java.util.List;
 import java.util.Map;
 
 public class MockData {
-    private List<Teacher> teachers;
-    private List<Student> students;
+    private List<User> users;
 
-    private HashMap<Teacher, String> teacherPasswords;
-    private HashMap<Student, String> studentPasswords;
+    private HashMap<User, Pair<String, String>> userCredentials;
 
     public MockData(){
-        initTeachers();
-        initStudents();
+        userCredentials = new HashMap<>();
+        initUsers();
     }
 
-    private void initTeachers(){
-        teachers = new ArrayList<>();
-        teacherPasswords = new HashMap<>();
-        createTeachers();
-        createTeacherPasswords();
+    private void initUsers() {
+        Teacher t = new Teacher("Jeppe","Moritz");
+        Student s = new Student("Roman", "Masár", new Lesson("CS", new ArrayList<>()));
+
+        userCredentials.put(t, new Pair<>("admin", "admin"));
+        userCredentials.put(s, new Pair<>("student", "student"));
     }
 
-    private void initStudents(){
-        students = new ArrayList<>();
-        studentPasswords = new HashMap<>();
-        createStudents();
-        createStudentPasswords();
-    }
-
-    private void createTeachers(){
-        Teacher t = new Teacher("Roman", "Masar");
-        teachers.add(t);
-    }
-
-    private void createStudents(){
-        //Student s = new Student("Ádám", "Lorincz");
-        //students.add(s);
-    }
-
-    public void createTeacherPasswords(){
-        for (Teacher t :
-                teachers) {
-            teacherPasswords.put(t, "admin");
-        }
-    }
-
-    public void createStudentPasswords(){
-        for (Student s :
-                students) {
-            studentPasswords.put(s, "user");
-        }
-    }
-
-    public Teacher validateTeacher(String pass){
-        return teacherPasswords.entrySet().stream()
-                .filter(password -> pass.equals(password.getValue()))
-                .map(Map.Entry::getKey).findFirst().orElse(null);
-    }
-
-    public Student validateStudent(String pass){
-        return studentPasswords.entrySet().stream()
-                .filter(password -> pass.equals(password.getValue()))
-                .map(Map.Entry::getKey).findFirst().orElse(null);
+    public HashMap<User, Pair<String, String>> getUserCredentials()
+    {
+        return userCredentials;
     }
 }

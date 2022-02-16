@@ -2,7 +2,7 @@ package attendance.be;
 
 import java.util.List;
 
-public class Student {
+public class Student extends User {
     private  String sfName;
     private String slName;
     private Lesson sClas;

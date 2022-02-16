@@ -1,6 +1,6 @@
 package attendance.be;
 
-public class Teacher {
+public class Teacher extends User {
     private String tfName;
     private String tlName;
 
