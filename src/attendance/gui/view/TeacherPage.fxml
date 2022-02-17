@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -29,6 +30,7 @@
                 <TableColumn fx:id="teacherClass" prefWidth="200.00001220703126" text="Class" />
               </columns>
             </TableView>
+            <Label fx:id="lblTeacherName" text="TeacherName" />
          </children>
       </GridPane>
    </children>
