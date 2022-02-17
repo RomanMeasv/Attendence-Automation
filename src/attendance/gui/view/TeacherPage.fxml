@@ -26,7 +26,7 @@
             </TableView>
             <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn prefWidth="200.00001220703126" text="C1" />
+                <TableColumn fx:id="teacherClass" prefWidth="200.00001220703126" text="Class" />
               </columns>
             </TableView>
          </children>

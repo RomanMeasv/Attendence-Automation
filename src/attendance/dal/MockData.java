@@ -13,6 +13,8 @@ public class MockData {
 
     private HashMap<User, Pair<String, String>> userCredentials;
 
+    private _Class c;
+
     public MockData(){
         userCredentials = new HashMap<>();
         initMockData();
@@ -38,7 +40,7 @@ public class MockData {
         List<Lesson> lessons = new ArrayList<>();
         lessons.add(l);
 
-        _Class c = new _Class("Scrubs", students, lessons);
+         c = new _Class("Scrubs", students, lessons);
 
 
         userCredentials.put(t, new Pair<>("admin", "admin"));
@@ -48,5 +50,11 @@ public class MockData {
     public HashMap<User, Pair<String, String>> getUserCredentials()
     {
         return userCredentials;
+    }
+
+    public List<_Class> getAllClasses(){
+        List<_Class> allClasses = new ArrayList<>();
+        allClasses.add(c);
+        return allClasses;
     }
 }
