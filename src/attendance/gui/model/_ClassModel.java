@@ -1,7 +1,6 @@
 package attendance.gui.model;
 
 import attendance.be._Class;
-import attendance.bll.TeacherLogic;
 import attendance.bll._ClassLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
