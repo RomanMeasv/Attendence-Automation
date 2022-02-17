@@ -13,6 +13,6 @@
       <Label layoutX="150.0" layoutY="206.0" text="Password" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="206.0" />
       <TextField fx:id="txfUsername" layoutX="150.0" layoutY="166.0" prefHeight="26.0" prefWidth="300.0" styleClass="interactive" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="166.0" />
       <Button id="loginbutton" layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="80.0" prefWidth="300.0" styleClass="interactive" text="Login" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
-      <PasswordField fx:id="pwfPassword" layoutX="150.0" layoutY="233.0" prefHeight="30.0" prefWidth="500.0" styleClass="interactive" />
+      <PasswordField fx:id="pwfPassword" layoutX="150.0" layoutY="233.0" prefHeight="30.0" prefWidth="500.0" styleClass="interactive" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="233.0" />
    </children>
 </AnchorPane>

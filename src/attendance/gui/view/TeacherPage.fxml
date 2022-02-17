@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,16 +20,17 @@
           <RowConstraints maxHeight="538.3999892234802" minHeight="10.0" prefHeight="482.1999450683594" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TableView fx:id="tbvStudents" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columns>
-                <TableColumn prefWidth="199.20001220703125" text="C1" />
+                <TableColumn prefWidth="199.20001220703125" text="Students" />
               </columns>
             </TableView>
-            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <TableView fx:id="tbvClasses" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="teacherClass" prefWidth="200.00001220703126" text="Class" />
               </columns>
             </TableView>
+            <Label fx:id="lblTeacherName" text="TeacherName" />
          </children>
       </GridPane>
    </children>

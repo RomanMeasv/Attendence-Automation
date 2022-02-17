@@ -7,9 +7,8 @@ public class Student extends User {
     private String name;
     private List<Attended> attendance;
 
-    public Student(String name, List<Attended> attendance)
+    public Student(String name)
     {
         this.name = name;
-        this.attendance = attendance;
     }
 }
