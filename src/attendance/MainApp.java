@@ -1,14 +1,14 @@
 package attendance;
 
-import attendance.gui.controller.LoginPageController;
-import attendance.gui.controller.RootLayoutController;
-import attendance.gui.controller.StudentPageController;
-import attendance.gui.controller.TeacherPageController;
+import attendance.be._Class;
+import attendance.gui.controller.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -49,7 +49,7 @@ public class MainApp extends Application {
     private void showLoginPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("gui/view/LoginPage.fxml"));
-        AnchorPane loginPage = loader.load();
+        Parent loginPage = loader.load();
 
         // Set person overview into the center of root layout.
         rootLayout.setCenter(loginPage);
@@ -62,7 +62,7 @@ public class MainApp extends Application {
     public void showStudentPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("gui/view/StudentPage.fxml"));
-        AnchorPane studentPage = loader.load();
+        Parent studentPage = loader.load();
 
         // Set person overview into the center of root layout.
         rootLayout.setCenter(studentPage);
@@ -75,12 +75,26 @@ public class MainApp extends Application {
     public void showTeacherPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("gui/view/TeacherPage.fxml"));
-        AnchorPane teacherPage = loader.load();
+        Parent teacherPage = loader.load();
 
-        rootLayout.setCenter(teacherPage);
+        rootLayout.setLeft(teacherPage);
+        rootLayout.setCenter(null);
 
         // Give the controller access to the main app.
         TeacherPageController controller = loader.getController();
         controller.setMainApp(this);
+    }
+
+    public void showClassOverview(_Class c) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("gui/view/ClassOverview.fxml"));
+        Parent classOverview = loader.load();
+
+        rootLayout.setRight(classOverview);
+
+        // Give the controller access to the main app.
+        ClassOverviewController controller = loader.getController();
+        controller.setMainApp(this);
+        controller.showOverviewOf(c);
     }
 }

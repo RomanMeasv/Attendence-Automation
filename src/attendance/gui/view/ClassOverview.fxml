@@ -6,15 +6,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="attendance.gui.controller.ClassOverviewController">
    <children>
       <Label text="Overview" />
-      <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <TableView fx:id="tbvClassAttendance" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Name" />
-          <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Total absence" />
-            <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Most missed class" />
-            <TableColumn minWidth="-1.0" prefWidth="-1.0" text="Most missed day" />
+          <TableColumn fx:id="colName" minWidth="-1.0" prefWidth="-1.0" text="Name" />
+          <TableColumn fx:id="colTotal" minWidth="-1.0" prefWidth="-1.0" text="Total absence" />
+            <TableColumn fx:id="colMostMissedClass" minWidth="-1.0" prefWidth="-1.0" text="Most missed class" />
+            <TableColumn fx:id="colMostMissedDay" minWidth="-1.0" prefWidth="-1.0" text="Most missed day" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

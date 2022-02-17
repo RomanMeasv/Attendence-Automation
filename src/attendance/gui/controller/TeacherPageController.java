@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -55,6 +56,11 @@ public class TeacherPageController implements Initializable {
         tbvClasses.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                tbvStudents.getItems().setAll(newSelection.getStudents());
+                try {
+                    mainApp.showClassOverview(newSelection);
+                } catch (IOException e) {
+                    //class overview couldnt be shown
+                }
             }
         });
     }

@@ -29,7 +29,7 @@ public class MockData {
         Student s2 = new Student("Roman", 0.12f,"Tuesday", "SCO");
 
         //login data for users
-        userCredentials.put(t, new Pair<>("admin", "admin"));
+        userCredentials.put(t, new Pair<>("", ""));
         userCredentials.put(s1, new Pair<>("student1", "student1"));
         userCredentials.put(s2, new Pair<>("student2", "student2"));
 
