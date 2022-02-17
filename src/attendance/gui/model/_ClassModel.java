@@ -15,7 +15,7 @@ public class _ClassModel {
         classes = FXCollections.observableList(classLogic.getClasses());
     }
 
-    public ObservableList<_Class> getAllClasses(){
+    public ObservableList<_Class> getClasses(){
         return classes;
     }
 }
