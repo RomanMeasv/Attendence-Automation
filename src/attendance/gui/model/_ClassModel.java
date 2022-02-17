@@ -7,15 +7,15 @@ import javafx.collections.ObservableList;
 
 public class _ClassModel {
     _ClassLogic classLogic;
-    ObservableList classes;
+    ObservableList allClasses;
 
     public _ClassModel()
     {
         classLogic = new _ClassLogic();
-        classes = FXCollections.observableList(classLogic.getClasses());
+        allClasses = FXCollections.observableList(classLogic.getAllClasses());
     }
 
-    public ObservableList<_Class> getClasses(){
-        return classes;
+    public ObservableList<_Class> getAllClasses(){
+        return allClasses;
     }
 }

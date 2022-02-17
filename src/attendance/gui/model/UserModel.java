@@ -7,7 +7,13 @@ public class UserModel {
     User loggedUser;
     UserLogic userLogic;
 
-    public UserModel()
+    private static UserModel instance = new UserModel();
+
+    public static UserModel getInstance(){
+        return instance;
+    }
+
+    private UserModel()
     {
         userLogic = new UserLogic();
     }

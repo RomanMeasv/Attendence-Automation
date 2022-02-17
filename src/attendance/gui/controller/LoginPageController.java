@@ -21,7 +21,7 @@ public class LoginPageController {
 
     public LoginPageController()
     {
-        userModel = new UserModel();
+        userModel = UserModel.getInstance();
     }
 
     public void setMainApp(MainApp mainApp) {

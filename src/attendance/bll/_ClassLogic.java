@@ -13,7 +13,7 @@ public class _ClassLogic {
         MockData mockData = new MockData();
     }
 
-    public List<_Class> getClasses(){
-        return mockData.getClasses();
+    public List<_Class> getAllClasses(){
+        return mockData.getAllClasses();
     }
 }
