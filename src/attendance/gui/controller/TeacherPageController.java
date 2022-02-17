@@ -45,6 +45,8 @@ public class TeacherPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        lblTeacherName.setText(((Teacher)userModel.getLoggedUser()).getName());
+
         colClassName.setCellValueFactory(new PropertyValueFactory<_Class, String>("name"));
         tbvClasses.getItems().setAll(classModel.getAllClasses());
 
@@ -55,8 +57,6 @@ public class TeacherPageController implements Initializable {
                tbvStudents.getItems().setAll(newSelection.getStudents());
             }
         });
-
-        lblTeacherName.setText(((Teacher)userModel.getLoggedUser()).getName());
     }
 }
 
