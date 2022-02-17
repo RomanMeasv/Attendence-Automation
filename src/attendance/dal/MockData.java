@@ -12,27 +12,36 @@ public class MockData {
     private List<User> users;
 
     private HashMap<User, Pair<String, String>> userCredentials;
-    private List<_Class> classes = new ArrayList<>();
+    private List<_Class> allClasses;
 
     public MockData(){
         userCredentials = new HashMap<>();
+        allClasses = new ArrayList<>();
+
         initMockData();
     }
 
     private void initMockData() {
+        //list of teacher
         Teacher t = new Teacher("Jeppe");
-        Student s = new Student("Milos");
+        //list of students
+        Student s1 = new Student("Milos");
+        Student s2 = new Student("Roman");
 
+        //login data for users
         userCredentials.put(t, new Pair<>("admin", "admin"));
-        userCredentials.put(s, new Pair<>("student", "student"));
+        userCredentials.put(s1, new Pair<>("student1", "student1"));
+        userCredentials.put(s2, new Pair<>("student2", "student2"));
 
         //Teacher's Page ---
         //list of classes
         _Class c1 = new _Class("CSe21.B");
+        c1.addStudent(s1);
         _Class c2 = new _Class("CSe22.B");
-        classes.add(c1);
-        classes.add(c2);
-        //list of students
+        c2.addStudent(s2);
+
+        allClasses.add(c1);
+        allClasses.add(c2);
 
         //Class overview
         //list of Student (names), total attendance (%), most missed class (String)
@@ -44,7 +53,7 @@ public class MockData {
         return userCredentials;
     }
 
-    public List<_Class> getClasses(){
-        return classes;
+    public List<_Class> getAllClasses(){
+        return allClasses;
     }
 }

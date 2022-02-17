@@ -9,4 +9,8 @@ public class Teacher extends User {
     public Teacher(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
 }
