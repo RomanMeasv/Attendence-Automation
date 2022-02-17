@@ -8,9 +8,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TeacherLogic {
-    MockData mockData = new MockData();
 
-    public List<_Class> getAllClasses(){
-        return mockData.getAllClasses();
-    }
 }
