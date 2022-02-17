@@ -1,28 +1,55 @@
-AnchorPane {
-    -fx-background-color: #25BBFC;
+.root {
+    -fx-background-color: #6B6B6B;
 }
 
 Label {
-    -fx-font-weight: 700;
-    -fx-text-fill: #FCBB2D;
+    -fx-font-family: Calibri;
 }
 
 Button {
 
 }
 
-.text-h1 {
+.gold-text {
+    -fx-text-fill: #FCBB2D;
+}
 
+.blue-text {
+    -fx-text-fill: #009FE3;
+}
+
+.dark-gray-text {
+    -fx-text-fill: #6B6B6B;
+}
+
+.light-gray-text {
+    -fx-text-fill: #EDEDED;
+}
+
+.text-h1 {
+    -fx-font-size: 24pt;
+    -fx-font-weight: bold;
 }
 
 .text-h2 {
-
+    -fx-font-size: 18pt;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
 }
 
 .text-h3 {
-
+    -fx-font-size: 14pt;
 }
 
 .text-h4 {
+    -fx-font-size: 16pt;
+    -fx-font-weight: bold;
+}
 
+.underline-text {
+    -fx-underline: true;
+}
+
+.button-background {
+    -fx-background-color: #EDEDED;
 }

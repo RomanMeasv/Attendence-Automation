@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -17,48 +18,82 @@
          <children>
             <VBox alignment="TOP_CENTER" maxWidth="400.0" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" styleClass="text-h1" text="Current class">
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" text="Current class">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <padding>
                         <Insets top="10.0" />
-                     </padding></Label>
-                  <Label fx:id="classLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="text-h2" text="ITO">
+                     </padding>
+                     <styleClass>
+                        <String fx:value="text-h1" />
+                        <String fx:value="light-gray-text" />
+                     </styleClass></Label>
+                  <Label fx:id="lblLessonName" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="LessonName">
                      <font>
                         <Font size="26.0" />
-                     </font></Label>
-                  <Label fx:id="teacherLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="text-h3" text="Trine">
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-h2" />
+                        <String fx:value="gold-text" />
+                     </styleClass></Label>
+                  <Label fx:id="lblTeacherName" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="TeacherName">
                      <font>
                         <Font size="16.0" />
-                     </font></Label>
-                  <Label fx:id="timeLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="text-h4" text="8:15 - 9:00">
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-h3" />
+                        <String fx:value="gold-text" />
+                     </styleClass></Label>
+                  <Label fx:id="lblLessonPeriod" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="LessonPeriod">
                      <font>
                         <Font size="18.0" />
-                     </font></Label>
-                  <Label maxWidth="1.7976931348623157E308" minHeight="-Infinity" text="Attended periods">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
                      </font>
-                  </Label>
-                  <ListView fx:id="lsvAttendance" prefHeight="200.0" prefWidth="200.0" />
-                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308">
+                     <styleClass>
+                        <String fx:value="text-h4" />
+                        <String fx:value="gold-text" />
+                     </styleClass></Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="buttton-" text="+">
+                        <Label maxWidth="1.7976931348623157E308" minHeight="-Infinity" text="Attended periods">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="text-h2" />
+                              <String fx:value="gold-text" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets left="4.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ListView fx:id="lsvAttendance" prefHeight="200.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="4.0" left="8.0" right="8.0" top="10.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox maxWidth="1.7976931348623157E308">
+                     <children>
+                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-background" text="+">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="30.0" />
+                              <Insets left="8.0" />
                            </HBox.margin></Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-" text="-">
+                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-background" text="-">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="4.0" />
                            </HBox.margin></Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-">
+                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-background">
                            <graphic>
                               <ImageView pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -78,7 +113,7 @@
             </VBox>
             <VBox maxWidth="400.0" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label fx:id="nameLabel" maxWidth="1.7976931348623157E308" text="John Bach">
+                  <Label maxWidth="1.7976931348623157E308" text="Overview">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -86,9 +121,13 @@
                         <Insets left="10.0" top="10.0" />
                      </padding>
                      <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font></Label>
-                  <Label maxWidth="1.7976931348623157E308" text="Overview">
+                        <Font size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-h1" />
+                        <String fx:value="light-gray-text" />
+                     </styleClass></Label>
+                  <Label fx:id="lblStudentName" maxWidth="1.7976931348623157E308" text="StudentName">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -96,25 +135,38 @@
                         <Insets left="10.0" />
                      </padding>
                      <font>
-                        <Font size="16.0" />
-                     </font></Label>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-h2" />
+                        <String fx:value="blue-text" />
+                     </styleClass></Label>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" text="Total absence:" underline="true">
+                        <Label alignment="TOP_LEFT" text="Total absence:">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="text-h2" />
+                              <String fx:value="blue-text" />
+                              <String fx:value="underline-text" />
+                           </styleClass>
                         </Label>
-                        <Label fx:id="absenceLabel" text="5%">
+                        <Label fx:id="lblAbsencePercent" alignment="TOP_LEFT" text="AbsencePercent">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="4.0" />
                            </HBox.margin>
+                           <styleClass>
+                              <String fx:value="text-h2" />
+                              <String fx:value="blue-text" />
+                           </styleClass>
                         </Label>
                      </children>
                   </HBox>
