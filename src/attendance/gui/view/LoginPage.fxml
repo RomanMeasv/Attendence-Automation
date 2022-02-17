@@ -1,18 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@css/loginpage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.LoginPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="dark-gray-background" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.LoginPageController">
    <children>
-      <Label id="title" alignment="CENTER" layoutX="286.0" layoutY="14.0" prefHeight="60.0" prefWidth="300.0" styleClass="header" text="Attendance Automation" textAlignment="CENTER" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="10.0" />
-      <Label layoutX="150.0" layoutY="136.0" text="Username" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="136.0" />
-      <Label layoutX="150.0" layoutY="206.0" text="Password" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="206.0" />
-      <TextField fx:id="txfUsername" layoutX="150.0" layoutY="166.0" prefHeight="26.0" prefWidth="300.0" styleClass="interactive" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="166.0" />
-      <Button id="loginbutton" layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="80.0" prefWidth="300.0" styleClass="interactive" text="Login" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
-      <PasswordField fx:id="pwfPassword" layoutX="150.0" layoutY="233.0" prefHeight="30.0" prefWidth="500.0" styleClass="interactive" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="233.0" />
+      <Label id="title" alignment="CENTER" layoutX="286.0" layoutY="14.0" prefHeight="60.0" prefWidth="300.0" text="Attendance Automation" textAlignment="CENTER" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="10.0">
+         <styleClass>
+            <String fx:value="text-h1" />
+            <String fx:value="blue-text" />
+            <String fx:value="round-corners" />
+            <String fx:value="blue-border" />
+            <String fx:value="thick-border" />
+         </styleClass></Label>
+      <Label layoutX="150.0" layoutY="136.0" text="Username" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="136.0">
+         <styleClass>
+            <String fx:value="text-h2" />
+            <String fx:value="gold-text" />
+         </styleClass></Label>
+      <TextField fx:id="txfUsername" layoutX="150.0" layoutY="166.0" prefHeight="26.0" prefWidth="300.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="166.0">
+         <styleClass>
+            <String fx:value="dark-gray-background" />
+            <String fx:value="thin-border" />
+            <String fx:value="gold-border" />
+            <String fx:value="round-corners" />
+         </styleClass></TextField>
+      <Label layoutX="150.0" layoutY="206.0" text="Password" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="206.0">
+         <styleClass>
+            <String fx:value="text-h2" />
+            <String fx:value="gold-text" />
+         </styleClass></Label>
+      <Button id="loginbutton" layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="80.0" prefWidth="300.0" text="Login" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
+         <styleClass>
+            <String fx:value="text-h1" />
+            <String fx:value="dark-gray-background" />
+            <String fx:value="gold-border" />
+            <String fx:value="thick-border" />
+            <String fx:value="round-corners" />
+            <String fx:value="gold-text" />
+         </styleClass></Button>
+      <PasswordField fx:id="pwfPassword" layoutX="160.0" layoutY="243.0" prefHeight="30.0" prefWidth="500.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="233.0">
+         <styleClass>
+            <String fx:value="dark-gray-background" />
+            <String fx:value="round-corners" />
+            <String fx:value="gold-border" />
+            <String fx:value="thin-border" />
+         </styleClass>
+      </PasswordField>
    </children>
 </AnchorPane>

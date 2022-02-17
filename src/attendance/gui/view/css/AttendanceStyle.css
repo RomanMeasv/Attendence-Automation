@@ -1,13 +1,29 @@
-.root {
-    -fx-background-color: #6B6B6B;
-}
-
 Label {
     -fx-font-family: Calibri;
 }
 
-Button {
+.dark-gray-background {
+    -fx-background-color: #6B6B6B;
+}
 
+.round-corners {
+    -fx-border-radius: 10px;
+}
+
+.gold-border {
+    -fx-border-color: #FCBB2D;
+}
+
+.blue-border {
+    -fx-border-color: #009FE3;
+}
+
+.thick-border {
+    -fx-border-width: 5px;
+}
+
+.thin-border {
+    -fx-border-width: 2px;
 }
 
 .gold-text {
