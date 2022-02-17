@@ -13,11 +13,11 @@ public class MockData {
 
     private HashMap<User, Pair<String, String>> userCredentials;
     private List<_Class> allClasses;
-
+    Student s1;
+    Student s2;
     public MockData(){
         userCredentials = new HashMap<>();
         allClasses = new ArrayList<>();
-
         initMockData();
     }
 
@@ -25,8 +25,13 @@ public class MockData {
         //list of teacher
         Teacher t = new Teacher("Jeppe");
         //list of students
+<<<<<<< Updated upstream
         Student s1 = new Student("Milos", 0.11f,"Monday", "ITO");
         Student s2 = new Student("Roman", 0.12f,"Tuesday", "SCO");
+=======
+         s1 = new Student("Milos");
+         s2= new Student("Roman");
+>>>>>>> Stashed changes
 
         //login data for users
         userCredentials.put(t, new Pair<>("", ""));
@@ -45,7 +50,25 @@ public class MockData {
 
         //Class overview
         //list of Student (names), total attendance (%), most missed class (String)
-        //...
+        //Student attendance
+        Attended a1 = new Attended("08:02", "10:30");
+        Attended a2 = new Attended("06:02", "9:30");
+        Attended a3 = new Attended("04:02", "11:30");
+        Attended a4 = new Attended("13:02", "19:30");
+        Attended a5= new Attended("15:02", "16:30");
+        s1.addAttendeds(a1);
+        s1.addAttendeds(a2);
+        s1.addAttendeds(a3);
+        s1.addAttendeds(a4);
+        s1.addAttendeds(a5);
+        s2.addAttendeds(a1);
+        s1.addAttendeds(a2);
+        s1.addAttendeds(a3);
+        s1.addAttendeds(a4);
+        s1.addAttendeds(a5);
+
+
+
     }
 
     public HashMap<User, Pair<String, String>> getUserCredentials()
@@ -55,5 +78,12 @@ public class MockData {
 
     public List<_Class> getAllClasses(){
         return allClasses;
+    }
+
+    public List<Attended> getS1Attendance(){
+        return s1.getAttendeds();
+    }
+    public List<Attended> getS2Attendance(){
+        return s2.getAttendeds();
     }
 }
