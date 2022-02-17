@@ -66,6 +66,6 @@ Label {
     -fx-underline: true;
 }
 
-.button-background {
+.light-gray-background {
     -fx-background-color: #EDEDED;
 }
