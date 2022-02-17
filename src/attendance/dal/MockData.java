@@ -25,13 +25,8 @@ public class MockData {
         //list of teacher
         Teacher t = new Teacher("Jeppe");
         //list of students
-<<<<<<< Updated upstream
         Student s1 = new Student("Milos", 0.11f,"Monday", "ITO");
         Student s2 = new Student("Roman", 0.12f,"Tuesday", "SCO");
-=======
-         s1 = new Student("Milos");
-         s2= new Student("Roman");
->>>>>>> Stashed changes
 
         //login data for users
         userCredentials.put(t, new Pair<>("", ""));

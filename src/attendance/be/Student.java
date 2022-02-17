@@ -5,13 +5,10 @@ import java.util.List;
 
 public class Student extends User {
     private String name;
-<<<<<<< Updated upstream
     private double totalAbsence;
     private String mostMissedClass;
     private String mostMissedDay;
-=======
     private List<Attended> attendeds;
->>>>>>> Stashed changes
 
     public Student(String name, double totalAbsence, String mostMissedClass, String mostMissedDay)
     {
@@ -26,7 +23,6 @@ public class Student extends User {
     {
         return name;
     }
-<<<<<<< Updated upstream
 
     public double getTotalAbsence() {
         return totalAbsence;
@@ -38,12 +34,12 @@ public class Student extends User {
 
     public String getMostMissedDay() {
         return mostMissedDay;
-=======
+    }
+
     public List<Attended> getAttendeds(){
         return this.attendeds;
     }
     public void addAttendeds(Attended a ){
         this.attendeds.add(a);
->>>>>>> Stashed changes
     }
 }
