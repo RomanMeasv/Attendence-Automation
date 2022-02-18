@@ -34,7 +34,7 @@ public class MainApp extends Application {
 
         initRootLayout();
 
-        showStudentOverview();
+        showLoginPage();
     }
 
     private void initRootLayout() throws IOException {
@@ -115,6 +115,5 @@ public class MainApp extends Application {
         // Give the controller access to the main app.
         StudentOverviewController controller = loader.getController();
         controller.setMainApp(this);
-
     }
 }

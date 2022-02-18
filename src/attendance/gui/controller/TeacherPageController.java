@@ -63,6 +63,16 @@ public class TeacherPageController implements Initializable {
                 }
             }
         });
+
+        tbvStudents.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                try {
+                    mainApp.showStudentOverview();
+                } catch (IOException e) {
+                    //class overview couldnt be shown
+                }
+            }
+        });
     }
 }
 
