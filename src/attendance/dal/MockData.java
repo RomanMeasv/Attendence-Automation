@@ -14,14 +14,14 @@ public class MockData {
 
     private HashMap<User, Pair<String, String>> userCredentials;
     private List<_Class> allClasses;
-    private List<Lesson> s1Lessons;
+    private List<Lesson> lessons;
 
     Student s1;
     Student s2;
     public MockData(){
         userCredentials = new HashMap<>();
         allClasses = new ArrayList<>();
-        s1Lessons = new ArrayList<>();
+        lessons = new ArrayList<>();
         initMockData();
     }
 
@@ -68,11 +68,11 @@ public class MockData {
         Lesson l4 = new Lesson("KKT", t, "Narnia",LocalDateTime.of(2022, 2, 21, 8, 0), LocalDateTime.of(2022, 2, 21, 15, 45));
         Lesson l5 = new Lesson("PCO", t, "Latvia",LocalDateTime.of(2022, 2, 22, 10, 0), LocalDateTime.of(2022, 2,22 , 16, 45));
 
-        s1Lessons.add(l1);
-        s1Lessons.add(l2);
-        s1Lessons.add(l3);
-        s1Lessons.add(l4);
-        s1Lessons.add(l5);
+        lessons.add(l1);
+        lessons.add(l2);
+        lessons.add(l3);
+        lessons.add(l4);
+        lessons.add(l5);
 
 
 
@@ -87,8 +87,5 @@ public class MockData {
         return allClasses;
     }
 
-    public List<Attended> getS1Attendance(){
-        return s1.getAttendeds();
-    }
-    public List<Lesson> getS1Lessons(){return  this.s1Lessons;}
+    public List<Lesson> getLessons(){return  this.lessons;}
 }

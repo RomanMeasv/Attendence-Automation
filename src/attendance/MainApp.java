@@ -105,7 +105,7 @@ public class MainApp extends Application {
         controller.showOverviewOf(c);
     }
 
-    public void showStudentOverview() throws IOException {
+    public void showStudentOverview(Student s) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("gui/view/StudentOverview.fxml"));
         Parent studentOverview = loader.load();
@@ -115,5 +115,6 @@ public class MainApp extends Application {
         // Give the controller access to the main app.
         StudentOverviewController controller = loader.getController();
         controller.setMainApp(this);
+        controller.showOverviewOf(s);
     }
 }
