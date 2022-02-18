@@ -51,7 +51,7 @@
             <String fx:value="text-h2" />
             <String fx:value="gold-text" />
          </styleClass></Label>
-      <Label fx:id="lblWrongLogin" alignment="CENTER" layoutX="150.0" layoutY="290.0" prefHeight="28.0" prefWidth="500.0" text="Wrong login credentials!" visible="false" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="290.0">
+      <Label fx:id="lblWrongLogin" alignment="CENTER" layoutX="150.0" layoutY="290.0" prefHeight="28.0" prefWidth="500.0" text="Wrong login credentials!" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="290.0">
          <styleClass>
             <String fx:value="text-h2" />
             <String fx:value="red-text" />

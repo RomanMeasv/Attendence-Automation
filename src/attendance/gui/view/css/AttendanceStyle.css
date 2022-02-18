@@ -83,6 +83,10 @@
     -fx-border-color: #EDEDED;
 }
 
+#lblWrongLogin {
+    visibility: hidden;
+}
+
 .bold-text {
     -fx-font-weight: bold;
 }

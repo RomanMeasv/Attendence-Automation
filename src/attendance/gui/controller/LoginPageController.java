@@ -38,7 +38,7 @@ public class LoginPageController {
             try{
                 handleLogin();
             } catch (IOException ex){
-                
+
             }
         }
     }
