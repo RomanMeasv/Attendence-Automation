@@ -26,11 +26,25 @@ public class StudentLogic {
         return formated;
     }
 
-//    public List<Lesson> getSpecificDayLesson(LocalDateTime day){
-//        List<Lesson> thisDayLessons = new ArrayList<>();
-//        for(Lesson l : getS1Lessons()){
-//            if(l.getStart().format(DateTimeFormatter.ofPattern("YYYY")));
-//        }
-//
-//    }
+    public List<String> getSpecificDayLesson(String day){
+        List<String> thisDayLessons = new ArrayList<>();
+        for(Lesson l : mockData.getLessons()){
+            String date = l.getStart().format(DateTimeFormatter.ISO_DATE);
+            if(day.equals(date)){
+                thisDayLessons.add(l.getFormatOverView());
+            }
+        }
+        return thisDayLessons;
+    }
+
+    public List<String> getSpecificDayAttendace(String day, Student s){
+        List<String> thisDayAttendace = new ArrayList<>();
+        for(Attended a : s.getAttendeds()){
+            String date = a.getStart().format(DateTimeFormatter.ISO_DATE);
+            if(day.equals(date)){
+                thisDayAttendace.add(a.getFormatOverView());
+            }
+        }
+        return thisDayAttendace;
+    }
 }

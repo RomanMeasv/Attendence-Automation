@@ -1,5 +1,7 @@
 package attendance.be;
 
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,5 +43,14 @@ public class Student extends User {
     }
     public void addAttendeds(Attended a ){
         this.attendeds.add(a);
+    }
+
+    public List<String> getFormatedAttendace(){
+        List<String> formatedAttendance = new ArrayList<>();
+        for(Attended a :this.attendeds){
+            String result = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(a.start) + " - " + DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(a.end);
+            formatedAttendance.add(result);
+        }
+        return formatedAttendance;
     }
 }

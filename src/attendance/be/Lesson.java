@@ -1,7 +1,11 @@
 package attendance.be;
 
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Date;
 
 public class Lesson {
     private String name;
@@ -29,7 +33,6 @@ public class Lesson {
 
     public String getFormatOverView(){
         String result = "";
-        return  result + this.name+" " + start.getHour()+":"+start.getMinute()+" - " + end.getHour()+":" + end.getMinute();
-
+        return  result + this.name+" "+DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(start) + " - " + DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(end);
     }
 }
