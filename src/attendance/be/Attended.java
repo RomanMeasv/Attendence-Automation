@@ -6,9 +6,9 @@ public class Attended {
     LocalDateTime start;
     LocalDateTime end;
 
-    public Attended(String start, String end)
+    public Attended(LocalDateTime start, LocalDateTime end)
     {
-        this.start = LocalDateTime.parse(start);
-        this.end = LocalDateTime.parse(end);
+        this.start = start;
+        this.end = start;
     }
 }

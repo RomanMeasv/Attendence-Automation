@@ -3,6 +3,7 @@ package attendance.dal;
 import attendance.be.*;
 import javafx.util.Pair;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,7 +47,7 @@ public class MockData {
         //Class overview
         //list of Student (names), total attendance (%), most missed class (String)
         //Student attendance
-        Attended a1 = new Attended("08:02", "10:30");
+        Attended a1 = new Attended(LocalDateTime.of(2022, 2, 18, 9, 0), LocalDateTime.of(2022, 2, 18, 9, 45));
         Attended a2 = new Attended("06:02", "9:30");
         Attended a3 = new Attended("04:02", "11:30");
         Attended a4 = new Attended("13:02", "19:30");
