@@ -11,7 +11,7 @@ public class Attended {
     public Attended(LocalDateTime start, LocalDateTime end)
     {
         this.start = start;
-        this.end = start;
+        this.end = end;
     }
 
     public LocalDateTime getStart() {
