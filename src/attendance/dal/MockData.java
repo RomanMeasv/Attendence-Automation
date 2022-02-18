@@ -47,11 +47,11 @@ public class MockData {
         //Class overview
         //list of Student (names), total attendance (%), most missed class (String)
         //Student attendance
-        Attended a1 = new Attended(LocalDateTime.of(2022, 2, 18, 9, 0), LocalDateTime.of(2022, 2, 18, 9, 45));
-        Attended a2 = new Attended("06:02", "9:30");
-        Attended a3 = new Attended("04:02", "11:30");
-        Attended a4 = new Attended("13:02", "19:30");
-        Attended a5= new Attended("15:02", "16:30");
+        Attended a1 = new Attended(LocalDateTime.of(2022, 2, 18, 9, 0), LocalDateTime.of(2022, 2, 18, 11, 45));
+        Attended a2 = new Attended(LocalDateTime.of(2022, 2, 19, 6, 0), LocalDateTime.of(2022, 2, 19, 12, 45));
+        Attended a3 = new Attended(LocalDateTime.of(2022, 2, 20, 7, 0), LocalDateTime.of(2022, 2, 20, 13, 45));
+        Attended a4 = new Attended(LocalDateTime.of(2022, 2, 21, 8, 0), LocalDateTime.of(2022, 2, 21, 15, 45));
+        Attended a5= new Attended(LocalDateTime.of(2022, 2, 22, 10, 0), LocalDateTime.of(2022, 2,22 , 16, 45));
         s1.addAttendeds(a1);
         s1.addAttendeds(a2);
         s1.addAttendeds(a3);
