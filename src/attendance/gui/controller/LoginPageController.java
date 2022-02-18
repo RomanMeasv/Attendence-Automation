@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 
@@ -29,6 +31,16 @@ public class LoginPageController {
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
+    }
+
+    public void loginAction(KeyEvent e){
+        if(e.getCode() == KeyCode.ENTER){
+            try{
+                handleLogin();
+            } catch (IOException ex){
+                
+            }
+        }
     }
 
     public void handleLogin() throws IOException {
