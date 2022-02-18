@@ -14,11 +14,14 @@ public class MockData {
 
     private HashMap<User, Pair<String, String>> userCredentials;
     private List<_Class> allClasses;
+    private List<Lesson> s1Lessons;
+
     Student s1;
     Student s2;
     public MockData(){
         userCredentials = new HashMap<>();
         allClasses = new ArrayList<>();
+        s1Lessons = new ArrayList<>();
         initMockData();
     }
 
@@ -26,8 +29,8 @@ public class MockData {
         //list of teacher
         Teacher t = new Teacher("Jeppe");
         //list of students
-        Student s1 = new Student("Milos", 0.11f,"Monday", "ITO");
-        Student s2 = new Student("Roman", 0.12f,"Tuesday", "SCO");
+         s1 = new Student("Milos", 0.11f,"Monday", "ITO");
+         s2 = new Student("Roman", 0.12f,"Tuesday", "SCO");
 
         //login data for users
         userCredentials.put(t, new Pair<>("", ""));
@@ -57,11 +60,19 @@ public class MockData {
         s1.addAttendeds(a3);
         s1.addAttendeds(a4);
         s1.addAttendeds(a5);
-        s2.addAttendeds(a1);
-        s1.addAttendeds(a2);
-        s1.addAttendeds(a3);
-        s1.addAttendeds(a4);
-        s1.addAttendeds(a5);
+
+
+        Lesson l1 = new Lesson("ITO", t, "Hell",LocalDateTime.of(2022, 2, 18, 9, 0), LocalDateTime.of(2022, 2, 18, 11, 45));
+        Lesson l2 = new Lesson("SDE", t, "Fortress",LocalDateTime.of(2022, 2, 19, 6, 0), LocalDateTime.of(2022, 2, 19, 12, 45));
+        Lesson l3 = new Lesson("SCO", t, "Jungle",LocalDateTime.of(2022, 2, 20, 7, 0), LocalDateTime.of(2022, 2, 20, 13, 45));
+        Lesson l4 = new Lesson("KKT", t, "Narnia",LocalDateTime.of(2022, 2, 21, 8, 0), LocalDateTime.of(2022, 2, 21, 15, 45));
+        Lesson l5 = new Lesson("PCO", t, "Latvia",LocalDateTime.of(2022, 2, 22, 10, 0), LocalDateTime.of(2022, 2,22 , 16, 45));
+
+        s1Lessons.add(l1);
+        s1Lessons.add(l2);
+        s1Lessons.add(l3);
+        s1Lessons.add(l4);
+        s1Lessons.add(l5);
 
 
 
@@ -79,7 +90,5 @@ public class MockData {
     public List<Attended> getS1Attendance(){
         return s1.getAttendeds();
     }
-    public List<Attended> getS2Attendance(){
-        return s2.getAttendeds();
-    }
+    public List<Lesson> getS1Lessons(){return  this.s1Lessons;}
 }
