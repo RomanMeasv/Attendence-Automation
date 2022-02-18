@@ -1,4 +1,4 @@
-Label {
+.root {
     -fx-font-family: Calibri;
 }
 
@@ -72,4 +72,21 @@ Label {
 
 .light-gray-background {
     -fx-background-color: #EDEDED;
+}
+
+.blue-border-focus:focused {
+    -fx-border-color: #009FE3;
+}
+
+.login:hover {
+    -fx-text-fill: #EDEDED;
+    -fx-border-color: #EDEDED;
+}
+
+.bold-text {
+    -fx-font-weight: bold;
+}
+
+.l-font {
+    -fx-font-size: 14pt;
 }

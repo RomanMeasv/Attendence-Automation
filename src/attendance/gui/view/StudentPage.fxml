@@ -164,7 +164,7 @@
                            </font>
                            <styleClass>
                               <String fx:value="text-h2" />
-                              <String fx:value="blue-text" />
+                              <String fx:value="red-text" />
                               <String fx:value="underline-text" />
                            </styleClass>
                         </Label>
@@ -177,7 +177,7 @@
                            </HBox.margin>
                            <styleClass>
                               <String fx:value="text-h2" />
-                              <String fx:value="blue-text" />
+                              <String fx:value="red-text" />
                            </styleClass>
                         </Label>
                      </children>
