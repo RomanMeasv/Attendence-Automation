@@ -34,6 +34,10 @@ Label {
     -fx-text-fill: #009FE3;
 }
 
+.red-text {
+    -fx-text-fill: #C00D0D;
+}
+
 .dark-gray-text {
     -fx-text-fill: #6B6B6B;
 }
