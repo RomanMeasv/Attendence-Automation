@@ -3,11 +3,16 @@ package attendance;
 import attendance.be._Class;
 import attendance.gui.controller.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -96,5 +101,18 @@ public class MainApp extends Application {
         ClassOverviewController controller = loader.getController();
         controller.setMainApp(this);
         controller.showOverviewOf(c);
+
+        //not really sure if I should create this here, this makes switching up the charts a bit hard
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Monday", 10),
+                        new PieChart.Data("Tuesday", 25),
+                        new PieChart.Data("Wednesday", 10),
+                        new PieChart.Data("Thursday", 25),
+                        new PieChart.Data("Friday", 30));
+        final PieChart chart = new PieChart(pieChartData);
+        chart.setTitle("Most missed days");
+
+        ((VBox)classOverview).getChildren().add(chart);
     }
 }
