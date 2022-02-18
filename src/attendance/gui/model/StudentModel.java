@@ -11,17 +11,11 @@ import java.util.List;
 
 public class StudentModel {
     StudentLogic studentLogic;
-    ObservableList<String> s1Lessons;
-    ObservableList<Attended> s1Attendance;
-    public StudentModel(){
+    ObservableList<String> lessons;
+    public StudentModel() {
         studentLogic = new StudentLogic();
-        s1Lessons = FXCollections.observableList(studentLogic.getS1FormatedLessons());
-        s1Attendance = FXCollections.observableList(studentLogic.get1Attedance());
+        lessons = FXCollections.observableList(studentLogic.getFormatedLessons());
     }
 
-    public ObservableList<Attended> getS1Attendace(){
-        return this.s1Attendance;
-    }
-
-    public ObservableList<String> getS1Lessons(){return  this.s1Lessons;}
+    public ObservableList<String> getLessons(){return lessons;}
 }

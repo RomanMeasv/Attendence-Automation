@@ -17,12 +17,8 @@ public class StudentLogic {
         mockData = new MockData();
     }
 
-    public List<Attended> get1Attedance(){
-       return mockData.getS1Attendance();
-    }
-
-    public List<String> getS1FormatedLessons(){
-        List<Lesson> allLessons = mockData.getS1Lessons();
+    public List<String> getFormatedLessons(){
+        List<Lesson> allLessons = mockData.getLessons();
         List<String> formated = new ArrayList<>();
         for(Lesson s : allLessons){
             formated.add(s.getFormatOverView());

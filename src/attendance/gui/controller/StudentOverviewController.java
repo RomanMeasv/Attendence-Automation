@@ -5,6 +5,7 @@ import attendance.be.Lesson;
 import attendance.be.Student;
 import attendance.be._Class;
 import attendance.gui.model.StudentModel;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
@@ -19,6 +20,7 @@ import java.util.ResourceBundle;
 public class StudentOverviewController implements Initializable {
     StudentModel studentModel = new StudentModel();
     private MainApp mainApp;
+    private Student s;
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
@@ -37,12 +39,16 @@ public class StudentOverviewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ltvClasses.setItems(studentModel.getS1Lessons());
-        ltvAttendend.setItems(studentModel.getS1Attendace());
+
     }
 
     public void getSpecificDate(){
 
     }
 
+    public void showOverviewOf(Student s) {
+        this.s = s;
+        ltvClasses.setItems(studentModel.getLessons());
+        ltvAttendend.setItems(FXCollections.observableList(s.getAttendeds()));
+    }
 }
