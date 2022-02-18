@@ -1,5 +1,6 @@
 package attendance;
 
+import attendance.be.Student;
 import attendance.be._Class;
 import attendance.gui.controller.*;
 import javafx.application.Application;
@@ -33,7 +34,7 @@ public class MainApp extends Application {
 
         initRootLayout();
 
-        showLoginPage();
+        showStudentOverview();
     }
 
     private void initRootLayout() throws IOException {
@@ -102,5 +103,18 @@ public class MainApp extends Application {
         controller.setMainApp(this);
         controller.setRootElement((VBox)classOverview);
         controller.showOverviewOf(c);
+    }
+
+    public void showStudentOverview() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("gui/view/StudentOverview.fxml"));
+        Parent studentOverview = loader.load();
+
+        rootLayout.setRight(studentOverview);
+
+        // Give the controller access to the main app.
+        StudentOverviewController controller = loader.getController();
+        controller.setMainApp(this);
+
     }
 }

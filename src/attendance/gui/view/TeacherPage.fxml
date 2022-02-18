@@ -18,17 +18,17 @@
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.40001220703124" minWidth="0.0" prefWidth="198.40001220703124" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="117.00003051757812" minHeight="10.0" prefHeight="33.0000061035156" vgrow="NEVER" />
+            <RowConstraints maxHeight="-Infinity" prefHeight="50.0" />
           <RowConstraints maxHeight="538.3999892234802" minHeight="10.0" prefHeight="482.1999450683594" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="lblTeacherName" text="TeacherName">
+            <Label fx:id="lblTeacherName" alignment="TOP_LEFT" text="TeacherName">
                <styleClass>
-                  <String fx:value="text-h2" />
+                  <String fx:value="text-h1" />
                   <String fx:value="gold-text" />
                </styleClass>
                <GridPane.margin>
-                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                  <Insets />
                </GridPane.margin></Label>
             <TableView fx:id="tbvClasses" prefHeight="200.0" prefWidth="200.0" styleClass="light-gray-background" GridPane.rowIndex="1">
               <columns>
