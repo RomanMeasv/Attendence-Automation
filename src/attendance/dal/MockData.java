@@ -26,8 +26,8 @@ public class MockData {
         //list of teacher
         Teacher t = new Teacher("Jeppe");
         //list of students
-        Student s1 = new Student("Milos", 0.11f,"Monday", "ITO");
-        Student s2 = new Student("Roman", 0.12f,"Tuesday", "SCO");
+        Student s1 = new Student("Milos", 0.11f,"ITO", "Tuesday");
+        Student s2 = new Student("Roman", 0.12f,"SCO", "Monday");
 
         //login data for users
         userCredentials.put(t, new Pair<>("", ""));
