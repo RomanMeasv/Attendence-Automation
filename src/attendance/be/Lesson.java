@@ -17,4 +17,19 @@ public class Lesson {
         this.start = start;
         this.end = end;
     }
+
+    public LocalDateTime getStart(){
+        return this.start;
+    }
+
+    @Override
+    public String toString(){
+        return "%s:%s".formatted(start.toString(), end.toString());
+    }
+
+    public String getFormatOverView(){
+        String result = "";
+        return  result + this.name+" " + start.getHour()+":"+start.getMinute()+" - " + end.getHour()+":" + end.getMinute();
+
+    }
 }

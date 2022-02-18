@@ -1,5 +1,6 @@
 package attendance;
 
+import attendance.be.Student;
 import attendance.be._Class;
 import attendance.gui.controller.*;
 import javafx.application.Application;
@@ -100,19 +101,19 @@ public class MainApp extends Application {
         // Give the controller access to the main app.
         ClassOverviewController controller = loader.getController();
         controller.setMainApp(this);
+        controller.setRootElement((VBox)classOverview);
         controller.showOverviewOf(c);
+    }
 
-        //not really sure if I should create this here, this makes switching up the charts a bit hard
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Monday", 10),
-                        new PieChart.Data("Tuesday", 25),
-                        new PieChart.Data("Wednesday", 10),
-                        new PieChart.Data("Thursday", 25),
-                        new PieChart.Data("Friday", 30));
-        final PieChart chart = new PieChart(pieChartData);
-        chart.setTitle("Most missed days");
+    public void showStudentOverview() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("gui/view/StudentOverview.fxml"));
+        Parent studentOverview = loader.load();
 
-        ((VBox)classOverview).getChildren().add(chart);
+        rootLayout.setRight(studentOverview);
+
+        // Give the controller access to the main app.
+        StudentOverviewController controller = loader.getController();
+        controller.setMainApp(this);
     }
 }
