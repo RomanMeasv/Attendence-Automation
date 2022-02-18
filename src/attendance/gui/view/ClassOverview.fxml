@@ -10,11 +10,17 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="dark-gray-background" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.ClassOverviewController">
    <children>
-      <Label text="Overview">
+      <Label alignment="BOTTOM_CENTER" maxHeight="-Infinity" prefHeight="50.0" text="Overview">
          <styleClass>
-            <String fx:value="text-h1" />
+            <String fx:value="text-h2" />
             <String fx:value="gold-text" />
-         </styleClass></Label>
+         </styleClass>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="4.0" />
+         </padding></Label>
       <TableView fx:id="tbvClassAttendance" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="colName" minWidth="-1.0" prefWidth="-1.0" text="Name" />

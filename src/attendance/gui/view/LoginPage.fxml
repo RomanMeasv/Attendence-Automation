@@ -34,6 +34,12 @@
             <String fx:value="text-h2" />
             <String fx:value="gold-text" />
          </styleClass></Label>
+      <Label fx:id="lblWrongLogin" alignment="CENTER" layoutX="149.0" layoutY="272.0" prefHeight="28.0" prefWidth="500.0" text="Wrong login credentials!" visible="false" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="270.0">
+         <styleClass>
+            <String fx:value="text-h2" />
+            <String fx:value="red-text" />
+         </styleClass>
+      </Label>
       <Button id="loginbutton" layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="80.0" prefWidth="300.0" text="Login" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
          <styleClass>
             <String fx:value="text-h1" />
