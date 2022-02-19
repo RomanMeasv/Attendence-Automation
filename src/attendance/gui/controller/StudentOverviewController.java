@@ -46,7 +46,7 @@ public class StudentOverviewController implements Initializable {
     public void getSpecificDate(){
         String date = getDatePickerValue().format(DateTimeFormatter.ISO_DATE);
         lsvLessons.setItems(studentModel.getLessonsForDay(date));
-        lsvAttendend.setItems(studentModel.getLAttendaceForDay(date, this.s));
+        lsvAttendend.setItems(studentModel.getLAttendaceForDay(date, s));
     }
 
     public void showOverviewOf(Student s) {
