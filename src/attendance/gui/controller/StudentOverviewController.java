@@ -33,14 +33,13 @@ public class StudentOverviewController implements Initializable {
     private ListView ltvLessons, ltvAttendend;
 
     public LocalDate getDatePickerValue(){
-        System.out.println(datePicker.getValue());
         return datePicker.getValue();
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        datePicker.setValue(LocalDate.now());
     }
 
     public void getSpecificDate(){
@@ -51,7 +50,7 @@ public class StudentOverviewController implements Initializable {
 
     public void showOverviewOf(Student s) {
         this.s = s;
-        ltvLessons.setItems(studentModel.getLessons());
-        ltvAttendend.setItems(FXCollections.observableList(s.getFormatedAttendace()));
+        //ltvLessons.setItems(studentModel.getLessons());
+        //ltvAttendend.setItems(FXCollections.observableList(s.getFormatedAttendace()));
     }
 }
