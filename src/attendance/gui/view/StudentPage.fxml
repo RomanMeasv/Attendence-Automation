@@ -18,7 +18,7 @@
          <children>
             <VBox alignment="TOP_CENTER" maxWidth="400.0" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" text="Current class">
+                  <Label fx:id="lblCurrentClass" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" text="Current class">
                      <font>
                         <Font size="24.0" />
                      </font>

@@ -11,8 +11,8 @@ public class Lesson {
     private String name;
     private Teacher teacher;
     private String room;
-    LocalDateTime start;
-    LocalDateTime end;
+    private LocalDateTime start;
+    private LocalDateTime end;
 
     public Lesson(String name, Teacher teacher, String room, LocalDateTime start, LocalDateTime end) {
         this.name = name;
@@ -22,10 +22,6 @@ public class Lesson {
         this.end = end;
     }
 
-    public LocalDateTime getStart(){
-        return this.start;
-    }
-
     @Override
     public String toString(){
         return "%s:%s".formatted(start.toString(), end.toString());
@@ -33,6 +29,19 @@ public class Lesson {
 
     public String getFormatOverView(){
         String result = "";
-        return  result + this.name+" "+DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(start) + " - " + DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(end);
+        return  result + name+" "+DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(start) + " - " + DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(end);
+    }
+
+    public LocalDateTime getStart(){
+        return start;
+    }
+
+    public LocalDateTime getEnd()
+    {
+        return end;
+    }
+
+    public String getName() {
+        return name;
     }
 }

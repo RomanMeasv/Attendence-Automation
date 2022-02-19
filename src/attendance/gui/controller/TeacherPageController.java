@@ -22,11 +22,13 @@ public class TeacherPageController implements Initializable {
     MainApp mainApp;
     _ClassModel classModel;
     UserModel userModel;
+    Teacher loggedTeacher;
 
     public TeacherPageController()
     {
         classModel = new _ClassModel();
         userModel = UserModel.getInstance();
+        loggedTeacher = (Teacher)userModel.getLoggedUser();
     }
 
     @FXML
@@ -46,7 +48,7 @@ public class TeacherPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        lblTeacherName.setText(((Teacher)userModel.getLoggedUser()).getName());
+        lblTeacherName.setText(loggedTeacher.getName());
 
         colClassName.setCellValueFactory(new PropertyValueFactory<_Class, String>("name"));
         tbvClasses.getItems().setAll(classModel.getAllClasses());

@@ -6,19 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student extends User {
+    private int id;
     private String name;
     private double totalAbsence;
     private String mostMissedClass;
     private String mostMissedDay;
     private List<Attended> attendeds;
 
-    public Student(String name, double totalAbsence, String mostMissedClass, String mostMissedDay)
+    public Student(int id, String name, double totalAbsence, String mostMissedClass, String mostMissedDay)
     {
-        attendeds = new ArrayList<>();
+        this.id = id;
         this.name = name;
         this.totalAbsence = totalAbsence;
         this.mostMissedClass = mostMissedClass;
         this.mostMissedDay = mostMissedDay;
+        attendeds = new ArrayList<>();
     }
 
     public String getName()
@@ -52,5 +54,23 @@ public class Student extends User {
             formatedAttendance.add(result);
         }
         return formatedAttendance;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        final Student other = (Student) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+
+        return true;
     }
 }

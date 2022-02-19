@@ -27,14 +27,14 @@ public class MockData {
 
     private void initMockData() {
         //list of teacher
-        Teacher t = new Teacher("Jeppe");
+        Teacher t = new Teacher(1, "Jeppe");
         //list of students
-         s1 = new Student("Milos", 21d,"ITO", "Monday");
-         s2 = new Student("Roman", 30d,"SCO", "Tuesday");
+         s1 = new Student(1, "Milos", 21d,"ITO", "Monday");
+         s2 = new Student(2,"Roman", 30d,"SCO", "Tuesday");
 
         //login data for users
         userCredentials.put(t, new Pair<>("", ""));
-        userCredentials.put(s1, new Pair<>("student1", "student1"));
+        userCredentials.put(s1, new Pair<>("s1", "s1"));
         userCredentials.put(s2, new Pair<>("student2", "student2"));
 
         //Teacher's Page ---
@@ -68,14 +68,17 @@ public class MockData {
         Lesson l4 = new Lesson("KKT", t, "Narnia",LocalDateTime.of(2022, 2, 21, 8, 0), LocalDateTime.of(2022, 2, 21, 15, 45));
         Lesson l5 = new Lesson("PCO", t, "Latvia",LocalDateTime.of(2022, 2, 22, 10, 0), LocalDateTime.of(2022, 2,22 , 16, 45));
 
+        c1.addLesson(l1);
+        c1.addLesson(l2);
+        c1.addLesson(l3);
+        c1.addLesson(l4);
+        c1.addLesson(l5);
+
         lessons.add(l1);
         lessons.add(l2);
         lessons.add(l3);
         lessons.add(l4);
         lessons.add(l5);
-
-
-
     }
 
     public HashMap<User, Pair<String, String>> getUserCredentials()
