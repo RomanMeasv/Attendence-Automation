@@ -3,6 +3,7 @@ package attendance.gui.controller;
 import attendance.MainApp;
 import attendance.be.Student;
 import attendance.be._Class;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +20,7 @@ import javafx.scene.layout.VBox;
 
 import javax.swing.event.ChangeListener;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -41,7 +43,7 @@ public class ClassOverviewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         colName.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
-        colTotal.setCellValueFactory(new PropertyValueFactory<Student, String>("totalAbsence"));
+        colTotal.setCellValueFactory(data -> new SimpleStringProperty(String.format("%.2f", data.getValue().getTotalAbsence())+"%"));
         colMostMissedClass.setCellValueFactory(new PropertyValueFactory<Student, String>("mostMissedClass"));
         colMostMissedDay.setCellValueFactory(new PropertyValueFactory<Student, String>("mostMissedDay"));
 
