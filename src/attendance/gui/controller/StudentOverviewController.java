@@ -30,7 +30,7 @@ public class StudentOverviewController implements Initializable {
     private DatePicker datePicker;
 
     @FXML
-    private ListView ltvLessons, ltvAttendend;
+    private ListView lsvLessons, lsvAttendend;
 
     public LocalDate getDatePickerValue(){
         return datePicker.getValue();
@@ -45,8 +45,8 @@ public class StudentOverviewController implements Initializable {
 
     public void getSpecificDate(){
         String date = getDatePickerValue().format(DateTimeFormatter.ISO_DATE);
-        ltvLessons.setItems(studentModel.getLessonsForDay(date));
-        ltvAttendend.setItems(studentModel.getLAttendaceForDay(date, this.s));
+        lsvLessons.setItems(studentModel.getLessonsForDay(date));
+        lsvAttendend.setItems(studentModel.getLAttendaceForDay(date, this.s));
     }
 
     public void showOverviewOf(Student s) {
