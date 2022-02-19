@@ -40,6 +40,7 @@ public class StudentOverviewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         datePicker.setValue(LocalDate.now());
+        //getSpecificDate(); ?
     }
 
     public void getSpecificDate(){
@@ -50,7 +51,5 @@ public class StudentOverviewController implements Initializable {
 
     public void showOverviewOf(Student s) {
         this.s = s;
-        //ltvLessons.setItems(studentModel.getLessons());
-        //ltvAttendend.setItems(FXCollections.observableList(s.getFormatedAttendace()));
     }
 }

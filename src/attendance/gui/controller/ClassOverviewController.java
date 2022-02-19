@@ -43,7 +43,7 @@ public class ClassOverviewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         colName.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
-        colTotal.setCellValueFactory(data -> new SimpleStringProperty(String.format("%.2f", data.getValue().getTotalAbsence())+"%"));
+        colTotal.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getTotalAbsenceString()));
         colMostMissedClass.setCellValueFactory(new PropertyValueFactory<Student, String>("mostMissedClass"));
         colMostMissedDay.setCellValueFactory(new PropertyValueFactory<Student, String>("mostMissedDay"));
 

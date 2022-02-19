@@ -27,9 +27,14 @@ public class Lesson {
         return "%s:%s".formatted(start.toString(), end.toString());
     }
 
-    public String getFormatOverView(){
+    public String getFullLessonInfoString(){
         String result = "";
-        return  result + name+" "+DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(start) + " - " + DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(end);
+        return  result + getName()+" "+getLessonPeriodString();
+    }
+
+    public String getLessonPeriodString(){
+        String result = "";
+        return  result + DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(start) + " - " + DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(end);
     }
 
     public LocalDateTime getStart(){
@@ -43,5 +48,9 @@ public class Lesson {
 
     public String getName() {
         return name;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
     }
 }

@@ -32,6 +32,11 @@ public class Student extends User {
         return totalAbsence;
     }
 
+    public String getTotalAbsenceString()
+    {
+        return String.format("%.2f", totalAbsence) + "%";
+    }
+
     public String getMostMissedClass() {
         return mostMissedClass;
     }

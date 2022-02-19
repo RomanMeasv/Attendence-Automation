@@ -1,6 +1,7 @@
 package attendance.gui.controller;
 
 import attendance.MainApp;
+import attendance.be.Lesson;
 import attendance.be.Student;
 import attendance.be._Class;
 import attendance.gui.model.UserModel;
@@ -15,12 +16,14 @@ import java.util.ResourceBundle;
 
 public class StudentPageController implements Initializable {
     @FXML
-    private Label lblCurrentClass, lblLessonName, lblTeacherName, lblLessonPeriod, lblStudentName, lblAbsencePercent;
+    private Label lblClassName, lblLessonName, lblTeacherName, lblLessonPeriod, lblStudentName, lblAbsencePercent;
 
-    MainApp mainApp;
-    _ClassModel classModel;
-    UserModel userModel;
-    Student loggedStudent;
+    private MainApp mainApp;
+    private _ClassModel classModel;
+    private UserModel userModel;
+    private Student loggedStudent;
+    private _Class classOfLoggedStudent;
+    private Lesson currentLesson;
 
     public StudentPageController()
     {
@@ -28,6 +31,8 @@ public class StudentPageController implements Initializable {
         userModel = UserModel.getInstance();
 
         loggedStudent = (Student) userModel.getLoggedUser();
+        classOfLoggedStudent = classModel.getClassOfStudent(loggedStudent);
+        currentLesson = classOfLoggedStudent.getLessonAt(LocalDateTime.of(2022, 2, 22, 10, 1)); //change this if you wanna display different login time
     }
 
     public void setMainApp(MainApp mainApp) {
@@ -36,6 +41,11 @@ public class StudentPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        lblCurrentClass.setText(classModel.getClassOfStudent(loggedStudent).getLessonAt(LocalDateTime.of(2022, 2, 22, 10, 1)).getName());
+        lblClassName.setText(classOfLoggedStudent.getName());
+        lblLessonName.setText(currentLesson.getName());
+        lblTeacherName.setText(currentLesson.getTeacher().getName());
+        lblLessonPeriod.setText(currentLesson.getLessonPeriodString());
+        lblStudentName.setText(loggedStudent.getName());
+        lblAbsencePercent.setText(loggedStudent.getTotalAbsenceString());
     }
 }

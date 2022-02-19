@@ -3,10 +3,8 @@ package attendance.bll;
 import attendance.be.Attended;
 import attendance.be.Lesson;
 import attendance.be.Student;
-import attendance.be._Class;
 import attendance.dal.MockData;
 
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +19,7 @@ public class StudentLogic {
         List<Lesson> allLessons = mockData.getLessons();
         List<String> formated = new ArrayList<>();
         for(Lesson s : allLessons){
-            formated.add(s.getFormatOverView());
+            formated.add(s.getFullLessonInfoString());
         }
         return formated;
     }
@@ -31,7 +29,7 @@ public class StudentLogic {
         for(Lesson l : mockData.getLessons()){
             String date = l.getStart().format(DateTimeFormatter.ISO_DATE);
             if(day.equals(date)){
-                thisDayLessons.add(l.getFormatOverView());
+                thisDayLessons.add(l.getFullLessonInfoString());
             }
         }
         return thisDayLessons;
