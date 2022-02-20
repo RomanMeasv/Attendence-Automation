@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -30,4 +31,9 @@ public class StudentModel {
         ObservableList<String> attedanceForToday = FXCollections.observableList(studentLogic.getSpecificDayAttendace(day,s));
         return attedanceForToday;
     };
+
+    public ObservableList<Lesson> getAllLessons(LocalDate localDate){
+        return FXCollections.observableList(studentLogic.getLessonsForDay( localDate));
+    }
+
 }

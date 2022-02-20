@@ -13,6 +13,8 @@ public class Lesson {
     private String room;
     private LocalDateTime start;
     private LocalDateTime end;
+    private String startTime;
+    private String endTime;
 
     public Lesson(String name, Teacher teacher, String room, LocalDateTime start, LocalDateTime end) {
         this.name = name;
@@ -20,6 +22,8 @@ public class Lesson {
         this.room = room;
         this.start = start;
         this.end = end;
+        this.startTime = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(start);
+        this.endTime = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).format(end);
     }
 
     @Override
@@ -44,6 +48,15 @@ public class Lesson {
     public LocalDateTime getEnd()
     {
         return end;
+    }
+
+    public String getStartTime(){
+        return startTime;
+    }
+
+    public String getEndTime()
+    {
+        return endTime;
     }
 
     public String getName() {

@@ -1,6 +1,7 @@
 package attendance.gui.controller;
 
 import attendance.MainApp;
+import attendance.be.Attended;
 import attendance.be.Lesson;
 import attendance.be.Student;
 import attendance.be._Class;
@@ -10,6 +11,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.Time;
@@ -28,9 +32,14 @@ public class StudentOverviewController implements Initializable {
     }
     @FXML
     private DatePicker datePicker;
-
     @FXML
-    private ListView lsvLessons, lsvAttendend;
+    private TableView<Lesson> tbvLessons;
+    @FXML
+    private TableColumn<Lesson, String> colLessons, colStart, colEnd;
+    @FXML
+    private TableView<Attended> tbvAttendance;
+    @FXML
+    private TableColumn<Attended, String> colAttendance;
 
     public LocalDate getDatePickerValue(){
         return datePicker.getValue();
@@ -40,14 +49,16 @@ public class StudentOverviewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         datePicker.setValue( LocalDateTime.now().toLocalDate());
-        lsvLessons.setItems(studentModel.getLessonsForDay(LocalDate.now().toString()));
+        tbvLessons.setItems(studentModel.getAllLessons(datePicker.getValue()));
+        colLessons.setCellValueFactory(new PropertyValueFactory<Lesson, String>("name"));
+        colStart.setCellValueFactory(new PropertyValueFactory<Lesson, String>("startTime"));
+        colEnd.setCellValueFactory(new PropertyValueFactory<Lesson, String>("endTime"));
+
 
     }
 
     public void getSpecificDate(){
-        String date = getDatePickerValue().format(DateTimeFormatter.ISO_DATE);
-        lsvLessons.setItems(studentModel.getLessonsForDay(date));
-        lsvAttendend.setItems(studentModel.getLAttendaceForDay(date, this.s));
+        tbvLessons.setItems(studentModel.getAllLessons(datePicker.getValue()));
     }
 
     public void showOverviewOf(Student s) {

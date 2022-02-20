@@ -5,6 +5,7 @@ import attendance.be.Lesson;
 import attendance.be.Student;
 import attendance.dal.MockData;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,5 +45,15 @@ public class StudentLogic {
             }
         }
         return thisDayAttendace;
+    }
+    //table view rework + renaming it, cause I am giving it random shit I come with now
+    public List<Lesson> getLessonsForDay(LocalDate localDate){
+        List<Lesson> dayLessons = new ArrayList<>();
+        for (Lesson l : mockData.getLessons()){
+            if(l.getStart().format(DateTimeFormatter.ISO_DATE).equals(localDate.format(DateTimeFormatter.ISO_DATE))){
+                dayLessons.add(l);
+            }
+        }
+        return dayLessons;
     }
 }
