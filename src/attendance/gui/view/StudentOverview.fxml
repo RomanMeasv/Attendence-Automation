@@ -15,8 +15,8 @@
                   <DatePicker fx:id="datePicker" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onAction="#getSpecificDate" prefHeight="25.0" prefWidth="200.0" />
                   <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="275.0" prefWidth="400.0">
                      <children>
-                        <ListView fx:id="ltvLessons" maxWidth="1.7976931348623157E308" prefHeight="275.0" prefWidth="200.0" />
-                        <ListView fx:id="ltvAttendend" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="200.0" />
+                        <ListView fx:id="lsvLessons" maxWidth="1.7976931348623157E308" prefHeight="275.0" prefWidth="200.0" />
+                        <ListView fx:id="lsvAttendend" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="200.0" />
                      </children>
                   </HBox>
                </children>

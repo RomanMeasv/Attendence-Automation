@@ -39,14 +39,15 @@ public class StudentOverviewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        datePicker.setValue(LocalDate.now());
-        //getSpecificDate(); ?
+        datePicker.setValue( LocalDateTime.now().toLocalDate());
+        lsvLessons.setItems(studentModel.getLessonsForDay(LocalDate.now().toString()));
+
     }
 
     public void getSpecificDate(){
         String date = getDatePickerValue().format(DateTimeFormatter.ISO_DATE);
         lsvLessons.setItems(studentModel.getLessonsForDay(date));
-        lsvAttendend.setItems(studentModel.getLAttendaceForDay(date, s));
+        lsvAttendend.setItems(studentModel.getLAttendaceForDay(date, this.s));
     }
 
     public void showOverviewOf(Student s) {
