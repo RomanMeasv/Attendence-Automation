@@ -39,7 +39,7 @@ public class StudentOverviewController implements Initializable {
     @FXML
     private TableView<Attended> tbvAttendance;
     @FXML
-    private TableColumn<Attended, String> colAttendance;
+    private TableColumn<Attended, String> colArrival, colLeft;
 
     public LocalDate getDatePickerValue(){
         return datePicker.getValue();
@@ -59,6 +59,9 @@ public class StudentOverviewController implements Initializable {
 
     public void getSpecificDate(){
         tbvLessons.setItems(studentModel.getAllLessons(datePicker.getValue()));
+        tbvAttendance.setItems(s.getAttendanceForDay(datePicker.getValue()));
+        colArrival.setCellValueFactory(new PropertyValueFactory<Attended, String>("startTime"));
+        colLeft.setCellValueFactory(new PropertyValueFactory<Attended, String>("endTime"));
     }
 
     public void showOverviewOf(Student s) {

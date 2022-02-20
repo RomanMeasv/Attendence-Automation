@@ -1,5 +1,9 @@
 package attendance.be;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
@@ -59,6 +63,16 @@ public class Student extends User {
             formatedAttendance.add(result);
         }
         return formatedAttendance;
+    }
+
+    public ObservableList<Attended> getAttendanceForDay(LocalDate localDate){
+        List<Attended> dayAttendacne = new ArrayList<>();
+        for(Attended a : this.attendeds){
+            if(a.start.format(DateTimeFormatter.ISO_DATE).equals(localDate.format(DateTimeFormatter.ISO_DATE))){
+                dayAttendacne.add(a);
+            }
+        }
+        return FXCollections.observableList(dayAttendacne);
     }
 
     @Override

@@ -25,7 +25,8 @@
                         </TableView>
                         <TableView fx:id="tbvAttendance" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn fx:id="colAttendance" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="199.0" text="Attendance" />
+                            <TableColumn fx:id="colArrival" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="81.0" text="Arrival" />
+                              <TableColumn fx:id="colLeft" prefWidth="118.0" text="Left" />
                           </columns>
                         </TableView>
                      </children>
