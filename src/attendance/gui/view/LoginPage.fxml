@@ -87,6 +87,7 @@
                            <styleClass>
                               <String fx:value="text-h3" />
                               <String fx:value="txt-col-red" />
+                              <String fx:value="txt-bold" />
                            </styleClass>
                            <VBox.margin>
                               <Insets top="10.0" />
