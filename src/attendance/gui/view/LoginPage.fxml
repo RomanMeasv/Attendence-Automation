@@ -21,6 +21,7 @@
                      <styleClass>
                         <String fx:value="text-h3" />
                         <String fx:value="txt-col1" />
+                        <String fx:value="txt-bold" />
                      </styleClass>
                      <VBox.margin>
                         <Insets bottom="2.0" right="420.0" />
@@ -42,6 +43,7 @@
                      <styleClass>
                         <String fx:value="text-h3" />
                         <String fx:value="txt-col1" />
+                        <String fx:value="txt-bold" />
                      </styleClass>
                      <VBox.margin>
                         <Insets right="425.0" />
