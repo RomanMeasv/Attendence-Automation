@@ -28,7 +28,7 @@
                         </TableView>
                         <TableView fx:id="tbvAttendance" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn fx:id="colArrival" minWidth="-1.0" prefWidth="-1.0" text="Arrival" />
+                            <TableColumn fx:id="colArrival" minWidth="-1.0" prefWidth="-1.0" text="Arrived" />
                               <TableColumn fx:id="colLeft" prefWidth="-1.0" text="Left" />
                           </columns>
                            <columnResizePolicy>
