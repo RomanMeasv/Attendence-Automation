@@ -84,7 +84,7 @@
                   </VBox>
                   <HBox maxWidth="1.7976931348623157E308">
                      <children>
-                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+">
+                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddAttended" prefHeight="30.0" prefWidth="30.0" text="+">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -95,7 +95,7 @@
                               <String fx:value="light-gray-background" />
                               <String fx:value="round-corners" />
                            </styleClass></Button>
-                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-">
+                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRemoveAttended" prefHeight="30.0" prefWidth="30.0" text="-">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -106,7 +106,7 @@
                               <String fx:value="light-gray-background" />
                               <String fx:value="round-corners" />
                            </styleClass></Button>
-                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+                        <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleEditAttended" prefHeight="30.0" prefWidth="30.0">
                            <graphic>
                               <ImageView pickOnBounds="true" preserveRatio="true">
                                  <image>

@@ -27,7 +27,7 @@ public class StudentModel {
         return lessonsForToday;
     };
 
-    public ObservableList<String> getLAttendaceForDay(String day, Student s){
+    public ObservableList<String> getAttendaceForDay(String day, Student s){
         ObservableList<String> attedanceForToday = FXCollections.observableList(studentLogic.getSpecificDayAttendace(day,s));
         return attedanceForToday;
     };

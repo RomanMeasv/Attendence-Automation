@@ -67,5 +67,27 @@ public class StudentPageController implements Initializable {
         colLeft.setCellValueFactory(new PropertyValueFactory<>("endTime"));
 
         tbvAttendance.setItems(loggedStudent.getAttendanceForDay(LocalDate.now()));
+
+
+    }
+
+
+    public void handleAddAttended()
+    {
+        System.out.println("To be implemented...");
+    }
+
+    public void handleRemoveAttended()
+    {
+        int selectedIndex = tbvAttendance.getSelectionModel().getSelectedIndex();
+        if (selectedIndex != -1)
+        {
+            tbvAttendance.getItems().remove(selectedIndex);
+        }
+    }
+
+    public void handleEditAttended()
+    {
+        System.out.println("To be implemented...");
     }
 }
