@@ -47,6 +47,9 @@
          <styleClass>
             <String fx:value="bc-col4" />
             <String fx:value="border-col1" />
+            <String fx:value="text-h4" />
+            <String fx:value="font-s12" />
+            <String fx:value="txt-col1" />
          </styleClass></ChoiceBox>
    </children>
    <padding>

@@ -6,44 +6,54 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="dark-gray-background" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.TeacherPageController">
+<AnchorPane minHeight="600.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.TeacherPageController">
    <children>
-      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.4" minWidth="10.0" prefWidth="159.19998779296873" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.40001220703124" minWidth="0.0" prefWidth="198.40001220703124" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints maxHeight="-Infinity" prefHeight="50.0" />
-          <RowConstraints maxHeight="538.3999892234802" minHeight="10.0" prefHeight="482.1999450683594" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <VBox minHeight="400.0" prefHeight="600.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="lblTeacherName" alignment="TOP_LEFT" text="TeacherName">
                <styleClass>
-                  <String fx:value="text-h1" />
-                  <String fx:value="gold-text" />
+                  <String fx:value="text-h2" />
+                  <String fx:value="txt-col1" />
                </styleClass>
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin></Label>
-            <TableView fx:id="tbvClasses" prefHeight="200.0" prefWidth="200.0" styleClass="light-gray-background" GridPane.rowIndex="1">
-              <columns>
-                <TableColumn fx:id="colClassName" prefWidth="200.00001220703126" text="Class" />
-              </columns>
-            </TableView>
-            <TableView fx:id="tbvStudents" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="200.0" styleClass="light-gray-background" GridPane.columnIndex="1" GridPane.rowIndex="1">
-              <columns>
-                <TableColumn fx:id="colStudentName" prefWidth="199.20001220703125" text="Students" />
-              </columns>
-            </TableView>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin></Label>
+            <HBox prefHeight="548.0" prefWidth="500.0">
+               <children>
+                  <TableView fx:id="tbvClasses" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="150.0">
+                    <columns>
+                      <TableColumn fx:id="colClassName" minWidth="150.0" prefWidth="245.0" text="Class" />
+                    </columns>
+                     <styleClass>
+                        <String fx:value="bc-col4" />
+                        <String fx:value="border-col1" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets right="4.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <TableView fx:id="tbvStudents" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="150.0">
+                    <columns>
+                      <TableColumn fx:id="colStudentName" minWidth="150.0" prefWidth="245.0" text="Students" />
+                    </columns>
+                     <styleClass>
+                        <String fx:value="bc-col4" />
+                        <String fx:value="border-col1" />
+                     </styleClass>
+                  </TableView>
+               </children>
+               <styleClass>
+                  <String fx:value="text-h4" />
+                  <String fx:value="font-s12" />
+               </styleClass>
+            </HBox>
          </children>
-      </GridPane>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </VBox>
    </children>
-   <padding>
-      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-   </padding>
 </AnchorPane>
