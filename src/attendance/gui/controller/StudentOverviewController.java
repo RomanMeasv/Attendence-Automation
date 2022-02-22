@@ -66,5 +66,6 @@ public class StudentOverviewController implements Initializable {
 
     public void showOverviewOf(Student s) {
         this.s = s;
+        getSpecificDate();
     }
 }

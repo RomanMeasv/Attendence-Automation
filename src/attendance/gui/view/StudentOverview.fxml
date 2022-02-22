@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentOverviewController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentOverviewController">
    <children>
       <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
          <children>
@@ -18,16 +18,22 @@
                      <children>
                         <TableView fx:id="tbvLessons" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn fx:id="colLessons" prefWidth="60.0" text="Lessons" />
-                              <TableColumn fx:id="colStart" prefWidth="60.0" text="Start" />
-                              <TableColumn fx:id="colEnd" prefWidth="79.0" text="End" />
+                            <TableColumn fx:id="colLessons" prefWidth="-1.0" text="Lessons" />
+                              <TableColumn fx:id="colStart" prefWidth="-1.0" text="Start" />
+                              <TableColumn fx:id="colEnd" prefWidth="-1.0" text="End" />
                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                         <TableView fx:id="tbvAttendance" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn fx:id="colArrival" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="81.0" text="Arrival" />
-                              <TableColumn fx:id="colLeft" prefWidth="118.0" text="Left" />
+                            <TableColumn fx:id="colArrival" minWidth="-1.0" prefWidth="-1.0" text="Arrival" />
+                              <TableColumn fx:id="colLeft" prefWidth="-1.0" text="Left" />
                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                      </children>
                   </HBox>
