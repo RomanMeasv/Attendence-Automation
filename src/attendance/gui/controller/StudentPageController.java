@@ -1,6 +1,7 @@
 package attendance.gui.controller;
 
 import attendance.MainApp;
+import attendance.be.Attended;
 import attendance.be.Lesson;
 import attendance.be.Student;
 import attendance.be._Class;
@@ -11,8 +12,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -21,7 +26,9 @@ public class StudentPageController implements Initializable {
     @FXML
     private Label lblClassName, lblLessonName, lblTeacherName, lblLessonPeriod, lblStudentName, lblAbsencePercent;
     @FXML
-    private ListView<String> lsvAttendance;
+    private TableView<Attended> tbvAttendance;
+    @FXML
+    private TableColumn<Attended, String> colArrived, colLeft;
 
     private MainApp mainApp;
     private _ClassModel classModel;
@@ -56,6 +63,9 @@ public class StudentPageController implements Initializable {
         lblStudentName.setText(loggedStudent.getName());
         lblAbsencePercent.setText(loggedStudent.getTotalAbsenceString());
 
-        lsvAttendance.setItems(studentModel.getLAttendaceForDay(LocalDateTime.now().format(DateTimeFormatter.ISO_DATE), loggedStudent));
+        colArrived.setCellValueFactory(new PropertyValueFactory<>("startTime"));
+        colLeft.setCellValueFactory(new PropertyValueFactory<>("endTime"));
+
+        tbvAttendance.setItems(loggedStudent.getAttendanceForDay(LocalDate.now()));
     }
 }
