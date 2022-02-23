@@ -4,7 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -158,7 +157,7 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox fx:id="vbxOverview" maxWidth="400.0" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="ALWAYS">
+            <VBox maxWidth="400.0" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label maxWidth="1.7976931348623157E308" text="Overview">
                      <VBox.margin>
@@ -217,21 +216,6 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Label text="Statistics of student">
-                     <styleClass>
-                        <String fx:value="text-h2" />
-                        <String fx:value="txt-col1" />
-                     </styleClass>
-                  </Label>
-                  <ChoiceBox fx:id="chbChart" minWidth="150.0">
-                     <styleClass>
-                        <String fx:value="bc-col4" />
-                        <String fx:value="border-col1" />
-                        <String fx:value="text-h4" />
-                        <String fx:value="font-s12" />
-                        <String fx:value="txt-col1" />
-                     </styleClass>
-                  </ChoiceBox>
                </children>
             </VBox>
          </children>

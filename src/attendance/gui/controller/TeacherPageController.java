@@ -61,7 +61,7 @@ public class TeacherPageController implements Initializable {
                 try {
                     mainApp.showClassOverview(newSelection);
                 } catch (IOException e) {
-                    System.out.println(e);
+                    //class overview couldnt be shown
                 }
             }
         });
@@ -71,7 +71,7 @@ public class TeacherPageController implements Initializable {
                 try {
                     mainApp.showStudentOverview(newSelection);
                 } catch (IOException e) {
-                    System.out.println(e);
+                    //class overview couldnt be shown
                 }
             }
         });

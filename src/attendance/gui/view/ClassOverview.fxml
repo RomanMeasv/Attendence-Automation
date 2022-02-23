@@ -35,7 +35,7 @@
             <String fx:value="border-col2" />
          </styleClass>
       </TableView>
-      <Label text="Statistics of class">
+      <Label text="Statistics">
          <styleClass>
             <String fx:value="text-h2" />
             <String fx:value="txt-col1" />
