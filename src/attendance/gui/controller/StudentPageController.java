@@ -8,12 +8,21 @@ import attendance.be._Class;
 import attendance.gui.model.StudentModel;
 import attendance.gui.model.UserModel;
 import attendance.gui.model._ClassModel;
+
 import attendance.gui.view.AttendanceDialog;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.chart.*;
+
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -30,6 +39,10 @@ public class StudentPageController implements Initializable {
     private TableView<Attended> tbvAttendance;
     @FXML
     private TableColumn<Attended, String> colArrived, colLeft;
+    @FXML
+    private VBox vbxOverview;
+    @FXML
+    private ChoiceBox<String> chbChart;
 
     private MainApp mainApp;
     private _ClassModel classModel;
@@ -69,7 +82,15 @@ public class StudentPageController implements Initializable {
 
         tbvAttendance.setItems(loggedStudent.getAttendanceForDay(LocalDate.now()));
 
+        chbChart.getItems().add("Most missed days");
+        chbChart.getItems().add("Most missed classes");
+        chbChart.setValue(chbChart.getItems().get(0));
 
+        chbChart.getSelectionModel()
+                .selectedItemProperty()
+                .addListener( (obs, newValue, oldValue) ->  showChart(oldValue.toString()));
+
+        showMostMissedDaysChart();
     }
 
     // no use for them since the functionality is not here
@@ -91,6 +112,61 @@ public class StudentPageController implements Initializable {
     public void handleEditAttended() {
         AttendanceDialog dialog = new AttendanceDialog();
         dialog.showAndWait();
+    }
+
+
+    public void showChart(String chartName)
+    {
+        vbxOverview.getChildren().remove(vbxOverview.getChildren().size()-1);
+
+        if (chartName.equals("Most missed days"))
+        {
+            showMostMissedDaysChart();
+        }
+        if (chartName.equals("Most missed classes"))
+        {
+            showMostMissedClassesChart();
+        }
+    }
+
+    private void showMostMissedClassesChart() {
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        final BarChart<String,Number> bc =
+                new BarChart<String,Number>(xAxis,yAxis);
+        bc.setTitle("Most missed classes");
+        xAxis.setLabel("Class");
+        yAxis.setLabel("No. of classes missed");
+
+        XYChart.Series series = new XYChart.Series();
+
+        series.setName("Results");
+        series.getData().add(new XYChart.Data("ITO", 70));
+        series.getData().add(new XYChart.Data("SCO", 5));
+        series.getData().add(new XYChart.Data("SDE", 10));
+        series.getData().add(new XYChart.Data("DBO", 15));
+
+        bc.getData().add(series);
+
+        bc.setLegendVisible(false);
+
+        vbxOverview.getChildren().add(bc);
+    }
+
+    public void showMostMissedDaysChart()
+    {
+        //make this actually work based on mock data, taking a _Class as a parameter?
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Monday", 10),
+                        new PieChart.Data("Tuesday", 0),
+                        new PieChart.Data("Wednesday", 0),
+                        new PieChart.Data("Thursday", 7),
+                        new PieChart.Data("Friday", 18));
+        final PieChart chart = new PieChart(pieChartData);
+        chart.setTitle("Most missed days");
+
+        vbxOverview.getChildren().add(chart);
     }
 
 }
