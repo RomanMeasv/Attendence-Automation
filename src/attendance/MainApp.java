@@ -4,24 +4,19 @@ import attendance.be.Student;
 import attendance.be._Class;
 import attendance.gui.controller.*;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MainApp extends Application {
     private Stage primaryStage;
-    private BorderPane rootLayout;
+
+    private AnchorPane anchorPane;
+    private HBox rootLayout;
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -41,10 +36,11 @@ public class MainApp extends Application {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("gui/view/RootLayout.fxml"));
-            rootLayout = loader.load();
-
+            anchorPane = loader.load();
+            rootLayout = (HBox)anchorPane.getChildren().get(0);
+            
             // Show the scene containing the root layout.
-            Scene scene = new Scene(rootLayout);
+            Scene scene = new Scene(anchorPane);
             primaryStage.setScene(scene);
             primaryStage.show();
 
@@ -58,7 +54,7 @@ public class MainApp extends Application {
         Parent loginPage = loader.load();
 
         // Set person overview into the center of root layout.
-        rootLayout.setCenter(loginPage);
+        rootLayout.getChildren().add(loginPage);
 
         // Give the controller access to the main app.
         LoginPageController controller = loader.getController();
@@ -71,7 +67,8 @@ public class MainApp extends Application {
         Parent studentPage = loader.load();
 
         // Set person overview into the center of root layout.
-        rootLayout.setCenter(studentPage);
+        rootLayout.getChildren().clear();
+        rootLayout.getChildren().add(studentPage);
 
         // Give the controller access to the main app.
         StudentPageController controller = loader.getController();
@@ -83,8 +80,8 @@ public class MainApp extends Application {
         loader.setLocation(MainApp.class.getResource("gui/view/TeacherPage.fxml"));
         Parent teacherPage = loader.load();
 
-        rootLayout.setLeft(teacherPage);
-        rootLayout.setCenter(null);
+        rootLayout.getChildren().clear();
+        rootLayout.getChildren().add(teacherPage);
 
         // Give the controller access to the main app.
         TeacherPageController controller = loader.getController();
@@ -96,7 +93,11 @@ public class MainApp extends Application {
         loader.setLocation(MainApp.class.getResource("gui/view/ClassOverview.fxml"));
         Parent classOverview = loader.load();
 
-        rootLayout.setRight(classOverview);
+        if(rootLayout.getChildren().size() == 1){
+            rootLayout.getChildren().add(classOverview);
+        } else {
+            rootLayout.getChildren().set(1, classOverview);
+        }
 
         // Give the controller access to the main app.
         ClassOverviewController controller = loader.getController();
@@ -110,7 +111,11 @@ public class MainApp extends Application {
         loader.setLocation(MainApp.class.getResource("gui/view/StudentOverview.fxml"));
         Parent studentOverview = loader.load();
 
-        rootLayout.setRight(studentOverview);
+        if(rootLayout.getChildren().size() == 1){
+            rootLayout.getChildren().add(studentOverview);
+        } else {
+            rootLayout.getChildren().set(1, studentOverview);
+        }
 
         // Give the controller access to the main app.
         StudentOverviewController controller = loader.getController();
