@@ -8,6 +8,7 @@ import attendance.be._Class;
 import attendance.gui.model.StudentModel;
 import attendance.gui.model.UserModel;
 import attendance.gui.model._ClassModel;
+import attendance.gui.view.AttendanceDialog;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -20,6 +21,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class StudentPageController implements Initializable {
@@ -71,8 +74,8 @@ public class StudentPageController implements Initializable {
 
     }
 
-
-    public void handleAddAttended()
+    //we don t need this since it is just to pop up and show that it works but doesnt work xD
+    //public void handleAddAttended()
     {
         System.out.println("To be implemented...");
     }
@@ -86,8 +89,8 @@ public class StudentPageController implements Initializable {
         }
     }
 
-    public void handleEditAttended()
-    {
-        System.out.println("To be implemented...");
+    public void handleEditAttended() {
+        AttendanceDialog dialog = new AttendanceDialog();
+        dialog.showAndWait();
     }
 }
