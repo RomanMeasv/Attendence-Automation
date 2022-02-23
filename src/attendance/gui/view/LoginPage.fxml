@@ -7,111 +7,127 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.LoginPageController">
+<VBox fx:id="loginPageRoot" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.LoginPageController">
    <children>
-      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="BOTTOM_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
          <children>
-            <VBox alignment="TOP_CENTER">
+            <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Username" HBox.hgrow="NEVER">
+               <styleClass>
+                  <String fx:value="text-h3" />
+                  <String fx:value="txt-col1" />
+                  <String fx:value="txt-bold" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="800.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextField fx:id="txfUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" onKeyPressed="#loginAction" prefHeight="30.0" HBox.hgrow="ALWAYS">
+               <styleClass>
+                  <String fx:value="txt-bold" />
+                  <String fx:value="font-s12" />
+                  <String fx:value="bc-col4" />
+                  <String fx:value="border-col1" />
+                  <String fx:value="border-w2" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="4.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="800.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="2.0" />
+         </VBox.margin>
+         <children>
+            <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Password">
+               <styleClass>
+                  <String fx:value="text-h3" />
+                  <String fx:value="txt-col1" />
+                  <String fx:value="txt-bold" />
+               </styleClass>
+               <padding>
+                  <Insets left="150.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="800.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+         <children>
+            <PasswordField fx:id="pwfPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" onKeyPressed="#loginAction" prefHeight="30.0">
+               <styleClass>
+                  <String fx:value="bc-col4" />
+                  <String fx:value="border-col1" />
+                  <String fx:value="border-w2" />
+                  <String fx:value="font-s12" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="150.0" />
+               </HBox.margin>
+            </PasswordField>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="800.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox HBox.hgrow="NEVER">
                <children>
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Username" VBox.vgrow="NEVER">
-                     <styleClass>
-                        <String fx:value="text-h3" />
-                        <String fx:value="txt-col1" />
-                        <String fx:value="txt-bold" />
-                     </styleClass>
-                     <VBox.margin>
-                        <Insets bottom="2.0" right="420.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="txfUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#loginAction" prefHeight="30.0" prefWidth="500.0" VBox.vgrow="NEVER">
-                     <styleClass>
-                        <String fx:value="txt-bold" />
-                        <String fx:value="font-s12" />
-                        <String fx:value="bc-col4" />
-                        <String fx:value="border-col1" />
-                        <String fx:value="border-w2" />
-                     </styleClass>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Password" VBox.vgrow="NEVER">
-                     <styleClass>
-                        <String fx:value="text-h3" />
-                        <String fx:value="txt-col1" />
-                        <String fx:value="txt-bold" />
-                     </styleClass>
-                     <VBox.margin>
-                        <Insets right="425.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets bottom="2.0" />
-                     </padding>
-                  </Label>
-                  <PasswordField fx:id="pwfPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#loginAction" prefHeight="30.0" prefWidth="500.0" VBox.vgrow="NEVER">
-                     <styleClass>
-                        <String fx:value="bc-col4" />
-                        <String fx:value="border-col1" />
-                        <String fx:value="border-w2" />
-                        <String fx:value="font-s12" />
-                     </styleClass>
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="120.0" right="120.0" />
-                     </VBox.margin>
-                  </PasswordField>
-               </children>
-            </VBox>
-            <HBox alignment="CENTER">
-               <children>
-                  <VBox>
+                  <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
                      <children>
-                        <HBox VBox.vgrow="NEVER">
-                           <children>
-                              <CheckBox fx:id="cbRemember" mnemonicParsing="false" styleClass="font-s12" />
-                              <Label maxWidth="1.7976931348623157E308" prefHeight="22.0" text="Remember me">
-                                 <HBox.margin>
-                                    <Insets left="4.0" />
-                                 </HBox.margin>
-                                 <styleClass>
-                                    <String fx:value="txt-col1" />
-                                    <String fx:value="font-s12" />
-                                 </styleClass>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Label fx:id="lblWrongLogin" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="300.0" text="Wrong login credentials!">
+                        <CheckBox fx:id="cbRemember" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" styleClass="font-s12" HBox.hgrow="NEVER" />
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="22.0" text="Remember me" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets left="4.0" />
+                           </HBox.margin>
                            <styleClass>
-                              <String fx:value="text-h3" />
-                              <String fx:value="txt-col-red" />
-                              <String fx:value="txt-bold" />
+                              <String fx:value="txt-col1" />
+                              <String fx:value="font-s12" />
                            </styleClass>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
                         </Label>
                      </children>
-                     <HBox.margin>
-                        <Insets right="25.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <Button fx:id="btnLogin" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="50.0" prefWidth="175.0" text="Login">
+                  </HBox>
+                  <Label fx:id="lblWrongLogin" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="300.0" text="Wrong login credentials!" VBox.vgrow="NEVER">
                      <styleClass>
-                        <String fx:value="text-h2" />
-                        <String fx:value="round-corners" />
-                        <String fx:value="bc-col2" />
-                        <String fx:value="txt-col3" />
+                        <String fx:value="text-h3" />
+                        <String fx:value="txt-col-red" />
+                        <String fx:value="txt-bold" />
                      </styleClass>
-                  </Button>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
                </children>
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-            </HBox>
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+            </VBox>
+            <Button fx:id="btnLogin" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="50.0" prefWidth="175.0" text="Login" HBox.hgrow="NEVER">
+               <styleClass>
+                  <String fx:value="text-h2" />
+                  <String fx:value="round-corners" />
+                  <String fx:value="bc-col2" />
+                  <String fx:value="txt-col3" />
+               </styleClass>
+            </Button>
          </children>
-      </VBox>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
    </children>
-</AnchorPane>
+</VBox>

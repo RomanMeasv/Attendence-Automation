@@ -3,7 +3,8 @@ package attendance.gui.controller;
 import attendance.MainApp;
 
 public class RootLayoutController {
-    MainApp main;
+    private MainApp main;
+
     public void setMainApp(MainApp main) {
         this.main = main;
     }
