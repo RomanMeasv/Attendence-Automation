@@ -2,7 +2,9 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
@@ -10,6 +12,12 @@
 
 <VBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="400.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentOverviewController">
    <children>
+      <Label alignment="BOTTOM_CENTER" maxHeight="-Infinity" text="Attendence">
+         <styleClass>
+            <String fx:value="text-h2" />
+            <String fx:value="txt-col1" />
+         </styleClass>
+      </Label>
       <DatePicker fx:id="datePicker" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#getSpecificDate">
          <VBox.margin>
             <Insets bottom="4.0" />
@@ -53,6 +61,21 @@
             </TableView>
          </children>
       </HBox>
+      <Label text="Statistics of student">
+         <styleClass>
+            <String fx:value="text-h2" />
+            <String fx:value="txt-col1" />
+         </styleClass>
+      </Label>
+      <ChoiceBox fx:id="chbChart" minWidth="150.0">
+         <styleClass>
+            <String fx:value="bc-col4" />
+            <String fx:value="border-col1" />
+            <String fx:value="text-h4" />
+            <String fx:value="font-s12" />
+            <String fx:value="txt-col1" />
+         </styleClass>
+      </ChoiceBox>
    </children>
    <padding>
       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
