@@ -6,7 +6,6 @@ import attendance.be.Lesson;
 import attendance.be.Student;
 import attendance.be._Class;
 import attendance.gui.model.StudentModel;
-import attendance.gui.view.AttendanceDialog;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,10 +67,5 @@ public class StudentOverviewController implements Initializable {
     public void showOverviewOf(Student s) {
         this.s = s;
         getSpecificDate();
-    }
-
-    public void handleEditAttended() {
-        AttendanceDialog dialog = new AttendanceDialog();
-        dialog.showAndWait();
     }
 }

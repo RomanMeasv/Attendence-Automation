@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentPageController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentPageController">
    <children>
       <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -100,7 +100,7 @@
                   </VBox>
                   <HBox maxWidth="1.7976931348623157E308">
                      <children>
-                        <Button alignment="CENTER" minHeight="36.0" minWidth="38.0" mnemonicParsing="false" onAction="#handleEditAttended" text="+">
+                        <Button alignment="CENTER" minHeight="36.0" minWidth="38.0" mnemonicParsing="false" onAction="#handleAddAttended" text="+">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>

@@ -8,19 +8,18 @@ import attendance.be._Class;
 import attendance.gui.model.StudentModel;
 import attendance.gui.model.UserModel;
 import attendance.gui.model._ClassModel;
-import attendance.gui.view.AttendanceDialog;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class StudentPageController implements Initializable {
@@ -72,12 +71,11 @@ public class StudentPageController implements Initializable {
 
     }
 
-    // no use for them since the functionality is not here
-//    public void handleAddAttended()
-//    {
-//        AttendanceDialog dialog = new AttendanceDialog();
-//
-//    }
+
+    public void handleAddAttended()
+    {
+        System.out.println("To be implemented...");
+    }
 
     public void handleRemoveAttended()
     {
@@ -87,10 +85,9 @@ public class StudentPageController implements Initializable {
             tbvAttendance.getItems().remove(selectedIndex);
         }
     }
-    //for some reason the dialog window cannot be closed
-    public void handleEditAttended() {
-        AttendanceDialog dialog = new AttendanceDialog();
-        dialog.showAndWait();
-    }
 
+    public void handleEditAttended()
+    {
+        System.out.println("To be implemented...");
+    }
 }
