@@ -115,6 +115,7 @@ public class MainApp extends Application {
         // Give the controller access to the main app.
         StudentOverviewController controller = loader.getController();
         controller.setMainApp(this);
+        controller.setRootElement((VBox)studentOverview);
         controller.showOverviewOf(s);
     }
 }
