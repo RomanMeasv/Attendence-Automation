@@ -34,7 +34,7 @@ public class ClassOverviewController implements Initializable {
     @FXML
     TableColumn<Student, String> colName, colTotal, colMostMissedClass, colMostMissedDay;
     @FXML
-    ChoiceBox chbChart;
+    ChoiceBox<String> chbChart;
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
