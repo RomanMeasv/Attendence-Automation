@@ -38,7 +38,7 @@ public class MainApp extends Application {
             loader.setLocation(MainApp.class.getResource("gui/view/RootLayout.fxml"));
             anchorPane = loader.load();
             rootLayout = (HBox)anchorPane.getChildren().get(0);
-            
+
             // Show the scene containing the root layout.
             Scene scene = new Scene(anchorPane);
             primaryStage.setScene(scene);
