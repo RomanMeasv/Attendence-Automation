@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="400.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="root" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="400.0" stylesheets="@css/AttendanceStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentOverviewController">
    <children>
       <Label alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Attendance">
          <styleClass>
