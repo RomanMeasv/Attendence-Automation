@@ -18,6 +18,7 @@ public class MockData {
 
     Student s1;
     Student s2;
+    Student s3;
     public MockData(){
         userCredentials = new HashMap<>();
         allClasses = new ArrayList<>();
@@ -29,13 +30,15 @@ public class MockData {
         //list of teacher
         Teacher t = new Teacher(1, "Jeppe");
         //list of students
-         s1 = new Student(1, "Milos", 21d,"ITO", "Monday");
-         s2 = new Student(2,"Roman", 30d,"SCO", "Tuesday");
+         s1 = new Student(1, "Milos Jozek", 21d,"ITO", "Monday");
+         s2 = new Student(2,"Roman Masár", 30d,"SCO", "Tuesday");
+         s3 = new Student(3, "Lőrincz Ádám", 11d, "ITO", "Monday");
 
         //login data for users
         userCredentials.put(t, new Pair<>("", ""));
         userCredentials.put(s1, new Pair<>("s1", "s1"));
         userCredentials.put(s2, new Pair<>("student2", "student2"));
+        userCredentials.put(s3, new Pair<>("ádám", "ádám"));
 
         //Teacher's Page ---
         //list of classes
@@ -43,6 +46,7 @@ public class MockData {
         c1.addStudent(s1);
         _Class c2 = new _Class("CSe22.B");
         c2.addStudent(s2);
+        c2.addStudent(s3);
 
         allClasses.add(c1);
         allClasses.add(c2);
@@ -61,6 +65,10 @@ public class MockData {
         s1.addAttendeds(a4);
         s1.addAttendeds(a5);
 
+        s2.addAttendeds(a1);
+        s3.addAttendeds(a2);
+        s3.addAttendeds(a5);
+
 
         Lesson l1 = new Lesson("ITO", t, "Hell",LocalDateTime.of(2022, 2, 18, 9, 0), LocalDateTime.of(2022, 2, 18, 11, 45));
         Lesson l2 = new Lesson("SDE", t, "Fortress",LocalDateTime.of(2022, 2, 19, 6, 0), LocalDateTime.of(2022, 2, 19, 12, 45));
@@ -73,6 +81,12 @@ public class MockData {
         c1.addLesson(l3);
         c1.addLesson(l4);
         c1.addLesson(l5);
+
+        c2.addLesson(l1);
+        c2.addLesson(l2);
+        c2.addLesson(l3);
+        c2.addLesson(l4);
+        c2.addLesson(l5);
 
         lessons.add(l1);
         lessons.add(l2);
